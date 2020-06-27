@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,8 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
 </head>
 <body style="background-color: rgba(205,205,205,0.01);">
@@ -44,7 +45,7 @@
 
       </div>
     </div>
-    <div class="parallax" style="background-color: #312a50;object-fit: cover;"><img src="homepage_background.png"></div>
+    <div class="parallax" style="background-color: #312a50;object-fit: cover;"><img src="{% static  'main/images/homepage_background.png' %}"></div>
   </div>
 <div class="row">
   <h3 class="center deep-purple-text">How it Works ?</h3><br>
@@ -70,12 +71,12 @@
   </div>
 
   <div class="col s6">
-    <img src="background2.png" width="735rem" height="570rem" >
+    <img src="{% static 'main/images/background2.png' %}" width="735rem" height="570rem" >
   </div>
 </div>
 <div class="row" style="margin-top:3rem;">
   <div class="col s6">
-    <img src="background3.png" width="735rem"height="500rem" >
+    <img src="{% static 'main/images/background3.png' %}" width="735rem" height="500rem" >
   </div>
   <div class="col s1"></div>
   <div class="col s5 ">
@@ -163,8 +164,8 @@
   <!--  Scripts-->
 
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+  <script src="{% static 'main/js/materialize.js' %}"></script>
+  <script src="{% static 'main/js/init.js' %}"></script>
 
   </body>
 </html>
