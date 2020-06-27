@@ -9,3 +9,5 @@ def marketplace(request):
     return render(request, 'main/Marketplace.html')
 def blog(request):
     return render(request, 'main/blog.html')
+def contact_us(request):
+    return  render(request,'main/contact_us.html')
