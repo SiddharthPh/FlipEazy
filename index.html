@@ -121,28 +121,11 @@
                 <input required type="text" id="Email">
                 <label for="Email">Email Address</label>
             </div>            
-              <input type="submit" value="Next" onclick="switchToMonetary()" class="right btn deep-purple"><br>             
-          </form>
-        </div>
-      </div>
-      <div id="monetary" class="modal2" style="display: none;">
-        <div class="modal-content center">
-          <h4>Monetization Method</h4>
-          <br>
-          <form action="#">
-            <div class="input-field">
-              <p class="center"><label><input type="checkbox" /><span>Google AdSense</span></label></p>
-              <p class="center"><label><input type="checkbox" /><span>MeddiaVine</span></label></p>
-              <p class="center"><label><input type="checkbox" /><span>ClickBank</span></label></p>
-              <p class="center"><label><input type="checkbox" /><span>ShareASale</span></label></p>
-              <p class="center"><label><input type="checkbox" /><span>AmazonAssociates</span></label></p>
-              <p class="center"><label><input type="text" placeholder="Other:" /></label></p>
-    
-            </div>            
               <input type="submit" value="Next" onclick="switchToIncome()" class="right btn deep-purple"><br>             
           </form>
         </div>
       </div>
+      
       <div id="income" class="modal2" style="display: none;">
         <div class="modal-content center">
           <h4>What is your Revenue ?</h4>
@@ -416,12 +399,8 @@
     document.querySelector('#url').style.display='none';
     document.querySelector('#email').style.display='block';
   }
-  function switchToMonetary(){
-    document.querySelector('#email').style.display='none';
-    document.querySelector('#monetary').style.display='block';
-  }
   function switchToIncome(){
-    document.querySelector('#monetary').style.display='none';
+    document.querySelector('#email').style.display='none';
     document.querySelector('#income').style.display='block';
   }
   function switchToSummary(){
