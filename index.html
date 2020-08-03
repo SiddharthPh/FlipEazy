@@ -22,7 +22,7 @@
         <li><a class="white-text" href="#">Marketplace</a></li>
         <li><a class="white-text modal-trigger"data-target="modal1" href="#">Login</a></li>
         <li><a class="white-text" href="#">Contact Us</a></li>
-        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right" style="font-weight: bold;border-radius:0.3rem;" href="#" >Free Valuation Trial</a></li>
+        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" data-target="modalid2" style="font-weight: bold;border-radius:0.3rem;" href="#" >Free Valuation Trial</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
@@ -32,7 +32,7 @@
     </div>
   </nav>
   <!-- Navbar -->
-  <!-- Modal -->
+  <!-- LOGIN/SIGNUP(Modal) -->
   <div id="modal1" class="modal bg" style="width: 30%">
     <div class="modal-content">
       <div id="login" class="modal1">
@@ -93,7 +93,90 @@
       </div>
     </div>
   </div>
-  <!-- Modal -->
+  <!-- ValuationTool Modal -->
+  <!-- Modal Structure -->
+  <div id="modalid2" class="modal bg" style="width: 30%">
+    <div class="modal-content">
+      <div id="url" class="modal2" >
+        <div class="modal-content center">
+          <h4>What is your URL ?</h4>
+          <br>
+          <form action="#">
+            <div class="input-field">
+              <i class="material-icons prefix">link</i>
+                <input required type="text" id="link">
+                <label for="link">http://www.url.com</label>
+            </div>            
+              <input  type="submit" value="Next" onclick="switchToEmail()" class="right btn deep-purple"><br>             
+          </form>
+        </div>
+      </div>
+      <div id="email" class="modal2" style="display: none;">
+        <div class="modal-content center">
+          <h4>Email Address</h4>
+          <br>
+          <form action="#">
+            <div class="input-field">
+              <i class="material-icons prefix">email</i>
+                <input required type="text" id="Email">
+                <label for="Email">Email Address</label>
+            </div>            
+              <input type="submit" value="Next" onclick="switchToMonetary()" class="right btn deep-purple"><br>             
+          </form>
+        </div>
+      </div>
+      <div id="monetary" class="modal2" style="display: none;">
+        <div class="modal-content center">
+          <h4>Monetization Method</h4>
+          <br>
+          <form action="#">
+            <div class="input-field">
+              <p class="center"><label><input type="checkbox" /><span>Google AdSense</span></label></p>
+              <p class="center"><label><input type="checkbox" /><span>MeddiaVine</span></label></p>
+              <p class="center"><label><input type="checkbox" /><span>ClickBank</span></label></p>
+              <p class="center"><label><input type="checkbox" /><span>ShareASale</span></label></p>
+              <p class="center"><label><input type="checkbox" /><span>AmazonAssociates</span></label></p>
+              <p class="center"><label><input type="text" placeholder="Other:" /></label></p>
+    
+            </div>            
+              <input type="submit" value="Next" onclick="switchToIncome()" class="right btn deep-purple"><br>             
+          </form>
+        </div>
+      </div>
+      <div id="income" class="modal2" style="display: none;">
+        <div class="modal-content center">
+          <h4>What is your Revenue ?</h4>
+          <br>
+          <form action="#">
+            <div class="input-field">
+              <i class="material-icons prefix">attach_money</i>
+                <input required type="text" id="amount">
+                <label for="amount">Revenue in $</label>
+            </div>            
+              <input type="submit" value="Next" onclick="switchToSummary()" class="right btn deep-purple"><br>             
+          </form>
+        </div>
+      </div>
+      <div id="summary" class="modal2" style="display: none;">
+        <div class="modal-content center">
+          <h4>Estimated Website Valuation</h4>
+          <br>
+
+          <form action="#">
+            
+              <p>The estimate valuation of selling directly to FlipEazy quickly is:</p>   
+                      
+              <input type="submit" value="SELL"  class=" btn-large deep-purple"><br>             
+          </form>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+  
+  
+
   <!-- Banner -->
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
@@ -113,9 +196,8 @@
   <!-- Banner -->
 <div class="row">
   <h3 class="center deep-purple-text">How it Works ?</h3><br>
-  
 </div>
- <div class="row">
+<div class="row">
   <!-- Info -->
   <div class="col s6" style="padding-left: 9rem;">
     <div class="col s8 deep-purple-text">
@@ -160,9 +242,9 @@
     
   </div>
 </div>
-  <div class="row">
+<div class="row">
     <h3 class="center deep-purple-text" style="margin-top: 4rem;">Why Choose Us?</h3>
-  </div>
+</div>
   <!-- Info -->
   <div class="row" style="margin-bottom: 3rem;">
     
@@ -242,6 +324,7 @@
   $(document).ready(function(){
     $('.modal').modal();
   });
+  //switching signup and login
   function switchToSignUp() {
       document.querySelector('#login').style.display = 'none';
       document.querySelector('#sign-up').style.display = 'block';      
@@ -317,6 +400,35 @@
                 }
 
             } 
+  // Modal of TOOL
+        document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal2');
+    var instances = M.Modal.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.modal2').modal();
+  });
+  //Switch URL to Email
+  function switchToEmail(){
+    document.querySelector('#url').style.display='none';
+    document.querySelector('#email').style.display='block';
+  }
+  function switchToMonetary(){
+    document.querySelector('#email').style.display='none';
+    document.querySelector('#monetary').style.display='block';
+  }
+  function switchToIncome(){
+    document.querySelector('#monetary').style.display='none';
+    document.querySelector('#income').style.display='block';
+  }
+  function switchToSummary(){
+    document.querySelector('#income').style.display='none';
+    document.querySelector('#summary').style.display='block';
+  }
+
   </script>
 
   </body>
