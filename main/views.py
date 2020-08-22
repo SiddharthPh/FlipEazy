@@ -15,7 +15,7 @@ def blog(request):
 def contact_us(request):
     return  render(request,'main/contact_us.html')
 def submit(request):
-    if request.method =='POST':
+   if request.method =='POST':
         mail=request.POST.get('mail')
         # income=request.POST.get('inc','')
         tool_obj=tool(mail=mail)

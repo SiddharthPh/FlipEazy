@@ -22,7 +22,7 @@
         <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li>
         <li><a class="white-text modal-trigger"data-target="modal1">Login</a></li>
         <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
-        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" data-target="modalid2" style="font-weight: bold;border-radius:0.3rem;" href="{% url 'url_form' %}">Free Valuation Trial</a></li>
+        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" data-target="modalid2" style="font-weight: bold;border-radius:0.3rem;" href="#">Free Valuation Trial</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
@@ -31,12 +31,139 @@
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+      <div id="modal1" class="modal bg" style="width: 30%">
+        <div class="modal-content">
+          <div id="login" class="modal1">
+            <div class="modal-content center">
+              <h4>Sign In</h4>
+              <br>
+              <form action="">
+                <div class="input-field">
+                <i class="material-icons prefix">person</i>
+                  <input required type="text" id="name">
+                    <label for="name">Username</label>
+                </div>
+                <br>
+                <div class="input-field">
+                  <i class="material-icons prefix">lock</i>
+                  <input required type="password" id="pass">
+                  <label for="pass">Password</label>
+                </div>
+                <br>
+                  <input type="submit" value="Login" class="btn deep-purple">
+                  <p><a href="#" onclick="switchToSignUp()">Don't have an account? Sign Up</a> </p>
+              </form>
+            </div>
+          </div>
+          <div id="sign-up" class="modal1" style="display: none;">
+            <div class="modal-content center">
+              <h4>Sign Up</h4>
+
+              <form class="col s4" onSubmit="return checkPassword(this)" >
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input required id="FirstName" type="text" class="validate">
+                    <label for="FirstName">First Name</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <input required id="LastName" type="text" class="validate">
+                    <label for="LastName">Last Name</label>
+                  </div>
+                   <div class="input-field col s12">
+                    <input required id="Email" type="email" class="validate">
+                    <label for="Email">Email</label>
+                  </div>
+                <div class="input-field col s12">
+                    <input required id="Password1" type="password" class="validate" name="password1"onkeyup="validatePassword(this.value);"><span id="msg">Password Strength:</span>
+                    <label for="Password1">Password</label>
+                </div>
+                <div class="input-field col s12">
+                    <input required id="con-Password1" type="password" name="password2" class="validate">
+                    <label for="con-Password1" >Confirm Password</label>
+                </div>
+                <div class="input-field col s12">
+                  <button type="submit" class="waves-effect waves-light btn deep-purple" >Submit</button>
+                  </div>
+                </div>
+            </form>
+          </div>
+
+          </div>
+        </div>
+      </div>
+  <!-- ValuationTool Modal -->
+  <!-- Modal Structure -->
+  <div id="modalid2" class="modal bg" style="width: 30%">
+    <div class="modal-content">
+      <div id="url" class="modal2" >
+        <div class="modal-content center">
+          <h4>What is your URL ?</h4>
+          <br>
+          <form action="#">
+            <div class="input-field">
+              <i class="material-icons prefix">link</i>
+                <input required type="text" id="link">
+                <label for="link">http://www.url.com</label>
+            </div>
+              <input  type="submit" value="Next" onclick="switchToEmail()" class="right btn deep-purple"><br>
+          </form>
+        </div>
+      </div>
+      <div id="email" class="modal2" style="display: none;">
+        <div class="modal-content center">
+          <h4>Email Address</h4>
+          <br>
+          <form action="submit" method="POST">
+            {% csrf_token %}
+            <div class="input-field">
+              <i class="material-icons prefix">email</i>
+                <input required type="text" id="Email" name="mail">
+                <label for="Email">Email Address</label>
+            </div>
+              <input type="submit" value="Next" onclick="switchToIncome()" class="right btn deep-purple"><br>
+          </form>
+        </div>
+      </div>
+
+      <div id="income" class="modal2" style="display: none;">
+        <div class="modal-content center">
+          <h4>What is your Revenue ?</h4>
+          <br>
+          <form action="#">
+            <div class="input-field">
+              <i class="material-icons prefix">attach_money</i>
+                <input required type="text" id="amount">
+                <label for="amount">Revenue in $</label>
+            </div>
+              <input type="submit" value="Next" onclick="switchToSummary()" class="right btn deep-purple"><br>
+          </form>
+        </div>
+      </div>
+      <div id="summary" class="modal2" style="display: none;">
+        <div class="modal-content center">
+          <h4>Estimated Website Valuation</h4>
+          <br>
+
+          <form action="#">
+
+              <p>The estimate valuation of selling directly to FlipEazy quickly is:</p>
+
+              <input type="submit" value="SELL"  class=" btn-large deep-purple"><br>
+          </form>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
 
   {% block content %}{% endblock %}
 </div>
-  <div class="row">
+<div class="row">
     <h3 class="center deep-purple-text" style="margin-top: 4rem;">Why Choose Us?</h3>
-  </div>
+</div>
+   Info --
   <div class="row" style="margin-bottom: 3rem;">
 
     <div class="col s3" style="margin-left: 5rem;">
@@ -60,7 +187,7 @@
       </div>
     </div>
   </div>
-
+  Footer --
   <footer class="page-footer deep-purple">
     <div class="container">
       <div class="row">
@@ -100,11 +227,123 @@
   </footer>
 
 
-  <!--  Scripts-->
-
+   <!-- Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="{% static 'main/js/materialize.js' %}"></script>
-  <script src="{% static 'main/js/init.js' %}"></script>
+  <script src="../../static/main/js/materialize.js"></script>
+  <script src="../static/main/js/init.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+  //switching signup and login
+  function switchToSignUp() {
+      document.querySelector('#login').style.display = 'none';
+      document.querySelector('#sign-up').style.display = 'block';
+
+
+    }
+    function validatePassword(password) {
+
+                // Do not show anything when the length of password is zero.
+                if (password.length === 0) {
+                    document.getElementById("msg").innerHTML = "";
+                    return;
+                }
+                // Create an array and push all possible values that you want in password
+                var matchedCase = new Array();
+                matchedCase.push("[$@$!%*#?&]"); // Special Charector
+                matchedCase.push("[A-Z]");      // Uppercase Alpabates
+                matchedCase.push("[0-9]");      // Numbers
+                matchedCase.push("[a-z]");     // Lowercase Alphabates
+
+                // Check the conditions
+                var ctr = 0;
+                for (var i = 0; i < matchedCase.length; i++) {
+                    if (new RegExp(matchedCase[i]).test(password)) {
+                        ctr++;
+                    }
+                }
+                // Display it
+                var color = "";
+                var strength = "";
+                switch (ctr) {
+                    case 0:
+                    case 1:
+                    case 2:
+                        strength = "Very Weak";
+                        color = "red";
+                        break;
+                    case 3:
+                        strength = "Medium";
+                        color = "orange";
+                        break;
+                    case 4:
+                        strength = "Strong";
+                        color = "green";
+                        break;
+                }
+                document.getElementById("msg").innerHTML = strength;
+                document.getElementById("msg").style.color = color;
+            }
+
+            function checkPassword(form) {
+                password1 = form.password1.value;
+                password2 = form.password2.value;
+
+                // If password not entered
+                if (password1 == '')
+                    alert ("Please enter Password");
+
+                // If confirm password not entered
+                else if (password2 == '')
+                    alert ("Please enter confirm password");
+
+                // If Not same return False.
+                else if (password1 != password2) {
+                    alert ("\nPassword did not match: Please try again...")
+                    return false;
+                }
+
+                // If same return True.
+                else{
+
+                    return true;
+                }
+
+            }
+  // Modal of TOOL
+        document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal2');
+    var instances = M.Modal.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.modal2').modal();
+  });
+  //Switch URL to Email
+  function switchToEmail(){
+    document.querySelector('#url').style.display='none';
+    document.querySelector('#email').style.display='block';
+  }
+  function switchToIncome(){
+    document.querySelector('#email').style.display='none';
+    document.querySelector('#income').style.display='block';
+  }
+  function switchToSummary(){
+    document.querySelector('#income').style.display='none';
+    document.querySelector('#summary').style.display='block';
+  }
+
+  </script>
 
   </body>
 </html>
