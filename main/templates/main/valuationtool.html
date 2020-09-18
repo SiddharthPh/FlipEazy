@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Valuation Tool</title>
+	<!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #312a50;">
+	<nav class=" deep-purple" role="navigation">
+    	<div class="nav-wrapper container"style=" width: 100%; ">
+			<a  href="{% url 'home_page' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a class="white-text" href="#">Blog</a> </li>
+        <li><a class="white-text" href="#">Marketplace</a></li>
+        <li><a class="white-text modal-trigger"data-target="modal1" href="#">Login</a></li>
+        <li><a class="white-text" href="#">Contact Us</a></li>
+        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" style="font-weight: bold;border-radius:0.3rem;" href="{% url 'valuationtool' %}" >Free Valuation Trial</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    	</div>
+    </nav>
+ 	<div>
+ 		<br><h1 class="center white-text" style="font-family: Rancho;font-size: 8.5rem;">FlipEazy</h1> 
+ 		<div class="center">
+ 			<a  id="started" class="btn-large white reddishblack-text waves-effect" style="border-radius: 0.3rem; font-weight: bold;margin-top: 7rem;" onclick="switchToFullName()">Get Started</a>
+		 </div>
+		 
+
+ 		<div class="container">
+ 			<div style="margin-left: 8rem;display: none;" id="fullname"><br>
+				 <h3 class="white-text" >Great, Can we get Your Full Name ?</h3>
+ 				<input required class="white-text" type="text" placeholder="Full Name"  id="name_text"> 
+ 				 
+ 				<a  id="started" class="btn-large white reddishblack-text waves-effect right" style="border-radius: 0.3rem; font-weight: bold;margin-top: 3rem;" onclick="switchToUrl()">NEXT</a>
+ 			</div>
+			 <div style="margin-left: 8rem;display: none;" id="url"><br>
+				<h2 class="white-text" id="nameh2">Hey</h3>
+				 <h3 class="white-text">Please Share your website's URL</h3>
+ 				<input required class="white-text"type="text" id="url_text" placeholder="http://www.example.com" >
+ 				<a  id="started" class="btn-large white reddishblack-text waves-effect right" style="border-radius: 0.3rem; font-weight: bold;margin-top: 3rem;" onclick="switchToMonetary()">NEXT</a> 		 			 					
+			</div>
+ 			
+ 			<div style="margin-left: 6rem;display: none;" id="monetary">
+ 				<h4 class="white-text">What type of site are you selling ?</h4>
+ 				<form action="#">
+ 					<label><input type="checkbox" name=""><span class="white-text"style="font-size: 2rem;">E-Commerce</span></label><br>
+ 					<label><input type="checkbox" name=""><span class="white-text"style="font-size: 2rem;">Advertising</span></label><br>
+ 					<label><input type="checkbox" name=""><span class="white-text"style="font-size: 2rem;">Affiliate Marketing</span></label><br>
+ 					<label><input type="checkbox" name=""><span class="white-text"style="font-size: 2rem;">Lead Gen</span></label><br>
+ 					<label><input type="checkbox" name=""><span class="white-text"style="font-size: 2rem;">$aa$</span></label> 			
+ 				</form> 
+ 				<a  id="started" class="btn-large white reddishblack-text waves-effect " style="border-radius: 0.3rem; font-weight: bold;margin-top: 3rem;" onclick="switchToRevenue()">NEXT</a>				
+ 			</div>
+ 			<div style="margin-left: 8rem;display: none;" id="revenue"><br>
+ 				<h4 class="white-text">What is your average revenue of the past 6 months ?</h4>
+ 					
+ 				<input required class="white-text" id="revenue_text" type="text" placeholder="Gross Revenue in # ">
+ 				<input required class="white-text" id="profit_text" type="text" placeholder="Net Profit in $">
+ 				<a  id="started" class="btn-large white reddishblack-text waves-effect right" style="border-radius: 0.3rem; font-weight: bold;margin-top: 3rem;" onclick="switchToTraffic()">NEXT</a> 		 			 				
+ 			</div>
+ 			<div style="margin-left: 8rem;display: none;" id="expenses"><br>
+ 				<h4 class="white-text">What is the total traffic per month incurred in past 6 months ?</h4>
+ 				<input required class="white-text" id="traffic_text" type="text" placeholder="Traffic in no. "> 				
+ 				<a href="#" id="started" class="btn-large white reddishblack-text waves-effect right" style="border-radius: 0.3rem; font-weight: bold;margin-top: 3rem;" onclick="switchToEmail()">NEXT</a> 		 			 				
+ 			</div> 			 			
+ 			<div style="margin-left: 8rem;display: none;"display: none; id="email"><br>
+ 				<h3 class="white-text">Email Address ?</h3>
+ 				<input required class="white-text" type="text" id="email_text" placeholder="someone.example@gmail.com" > 		 			 				
+ 				<a id="started" class="btn-large white reddishblack-text waves-effect right" style="border-radius: 0.3rem; font-weight: bold;margin-top: 3rem;" onclick="switchToOut()">Submit</a>
+			</div> 
+			<div style="margin-left: 8rem;display: none;"display: none; id="out"><br>	
+				<h3 class="white-text">Web site value is</h3>
+				<h4 class="white-text" id="output"></h4>
+			</div>	 					
+ 		</div>
+ 	</div>
+ 		
+
+ 		<script type="text/javascript">
+ 			
+ 				// Functions for NEXT Button
+ 			function switchToFullName(){
+ 				document.querySelector('#fullname').style.display='block';
+ 				document.querySelector('#started').style.display='none'; 	
+
+ 			}
+ 			function getCookie(name) {
+    			let cookieValue = null;
+   					 if (document.cookie && document.cookie !== '') {
+        				const cookies = document.cookie.split(';');
+        					for (let i = 0; i < cookies.length; i++) {
+            					const cookie = cookies[i].trim();
+            				// Does this cookie string begin with the name we want?
+            				if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                				cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                			break;
+           	 				}
+       						}
+    				}
+    			return cookieValue;
+				}
+			const csrftoken = getCookie('csrftoken');
+ 			 			
+ 			function switchToUrl(){
+				var name1= document.getElementById("name_text").value
+				document.getElementById("nameh2").innerHTML="Hey ".concat(name1).concat("!")
+				document.querySelector('#url').style.display='block';
+ 				document.querySelector('#fullname').style.display='none';				
+			 }
+			 
+ 			function switchToMonetary(){
+ 				document.querySelector('#monetary').style.display='block';
+ 				document.querySelector('#url').style.display='none';
+ 					
+ 			}
+
+ 			function switchToRevenue(){
+ 				document.querySelector('#revenue').style.display='block';
+ 				document.querySelector('#monetary').style.display='none';
+ 					
+ 			}
+ 			
+ 			function switchToTraffic(){
+				
+ 				document.querySelector('#revenue').style.display='none';
+ 				document.querySelector('#expenses').style.display='block';
+ 					
+ 			}
+ 			function switchToEmail(){
+				
+ 				document.querySelector('#email').style.display='block';
+				document.querySelector('#expenses').style.display='none';
+			}
+			
+			function switchToOut(){
+				var name1= document.getElementById("name_text").value
+				console.log(name1)
+				var url_name=document.getElementById("url_text").value
+				console.log(url_name)
+				var revenue_calc=document.getElementById("revenue_text").value
+				console.log(revenue_calc)
+				var profit_calc=document.getElementById("profit_text").value
+				var traffic_calc=document.getElementById("traffic_text").value
+				var email_calc=document.getElementById("email_text").value
+				var obj = { name: name1, email: email_calc, url: url_name };
+				console.log(obj)
+				console.log(profit_calc)
+				console.log(traffic_calc)
+				profit_calc=parseFloat(profit_calc)
+				traffic_calc=parseFloat(traffic_calc)
+				var value_out=(profit_calc+(profit_calc/traffic_calc))*25
+				document.getElementById("output").innerHTML=value_out.toString()
+				console.log(value_out)
+				// var myJSON = JSON.stringify(name1);
+				// console.log(myJSON)
+				var xhttp = new XMLHttpRequest();	
+				xhttp.open("POST","{% url 'data_submit' %}", true)
+				xhttp.setRequestHeader('X-CSRFToken', csrftoken)
+				var json=JSON.stringify(obj)
+				xhttp.send(json)	
+				xhttp.onreadystatechange = function() {
+ 					 if (this.readyState == 4 && this.status == 200) {
+						document.querySelector('#out').style.display='block';
+ 				 		document.querySelector('#email').style.display='none';
+  						}
+				};
+				
+
+			}
+ 			
+
+
+
+ 			
+ 		</script>
+
+</body>
+</html>
