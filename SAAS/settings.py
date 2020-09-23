@@ -25,7 +25,7 @@ SECRET_KEY = "9db1683df3327b09301c58e47d8b83f34686d92eef04c042"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['saasmarketplace.herokuapp.com']
+ALLOWED_HOSTS = ['saasmarketplace.herokuapp.com','127.0.0.1']
 
 
 # Application definition

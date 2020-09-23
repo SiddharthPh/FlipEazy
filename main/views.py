@@ -11,7 +11,7 @@ def login(request):
 def marketplace(request):
     return render(request, 'main/Marketplace.html')
 def blog(request):
-    return render(request, 'main/blog.html')
+    return render(request, 'main/WHAT FACTORS DETERMINES YOUR WEBSITES WORTH.html')
 def contact_us(request):
     return  render(request,'main/contact_us.html')
 def valuationtool(request):
