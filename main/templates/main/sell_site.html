@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sell a Digital Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" type="text/css" href="../../static/main/css/index.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script type = "text/javascript"src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>             
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>  
+</head>
+<body style="background-color: rgba(205,205,205,0.01);">
+	<nav class=" deep-purple" role="navigation">
+    <div class="nav-wrapper container" style="width: 100%;">
+      <a href="{% url 'home_page' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
+
+      <ul class="right hide-on-med-and-down">
+        <!-- <li><a class="white-text" href="index.html">Home</a></li> -->
+        <li><a class="white-text" href="{% url 'blog' %}">Blog</a> </li>
+        <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li>
+        <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
+        <li><a class="white-text" href="{% url 'about_us' %}">Contact Us</a></li>
+        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" data-target="modalid2" style="font-weight: bold;border-radius:0.3rem;" href="{% url 'valuationtool' %}" >Free Valuation Trial</a></li>
+      </ul>
+
+      <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="sidenav">
+        <li style=" background-color: #312a50;border-radius: 2rem;"><a class="white-text center" href="#" style="font-weight: 500;font-family: Rancho;font-size: 20px;">FlipEazy</a></li>
+        <!-- <li><a class="center" href="index.html">Home</a></li> -->
+        <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
+        <li><a class="center" href="{% url 'marketplace' %}">MarketPlace</a></li>
+        <li><a class="center" href="{% url 'login' %}">Login</a></li>
+        <li><a class="center" href="{% url 'about_us' %}">Contact Us</a></li>
+        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Trial</a></li>
+      </ul>
+      
+    </div>
+ </nav>
+    <div class="banner">
+    <div class="section no-pad-bot">
+      <div class="container">        
+        <h1 class="center white-text">Sell a Digital Asset</h1>
+        <h6 class="center white-text" style="margin-top: 1rem;">that's already profitable</h6>
+        <div style="text-align: center; height: 10rem;">          
+             <a href="{% url 'marketplace' %}" class="reddishblack-text btn-large white  waves-effect link-button" >submit</a> 
+              <a href="{% url 'about_us' %}" class="reddishblack-text btn-large white  waves-effect link-button">Contact Us</a>                                 
+        </div>     
+      </div>
+    </div>
+  </div> 	
+
+    <div>
+  		<h3 class="center" style="margin-bottom: 0rem;"> Benefits of <strong>Selling</strong></h3><br>
+  		<h3 class="center" style="font-family: Rancho;margin-top: 0rem;font-size: 3.2rem;">to FlipEazy</h3>
+	  </div>
+	
+
+	<div class="row" style="margin: auto;margin-bottom: 4rem;">
+      <div class="col l1" style="width: 10% !important;"></div>
+      <div class="col s12 m12 l3">
+          <div class="card shadow hoverable" >
+            <div class="card-head"><span class="center white-text">Fair Listing Price</span></div>
+            <h6 class="card-content" >We value the website as per the industry norms and ensure that we do not overvalue or undervalue your digital asset.</h6>
+        </div>
+      </div> 
+      <div class="col l1" style="width: 2% !important;"></div>
+       <div class="col s12 m12 l3">
+          <div class="card shadow hoverable ">
+            <div class="card-head"><span class="center white-text">Zero Listing Fees</span></div>
+            <h6 class="card-content">The seller can actually list their websites without any fee. We charge a total of 10% commission 5% from the buyer and 5% from the seller on a successful transaction.</h6>
+        </div>
+      </div> 
+      <div class="col l1" style="width: 2% !important;"></div>
+       <div class="col s12 m12 l3">
+          <div class="card shadow hoverable">
+            <div class="card-head"><span class="center white-text">Rigorous Verification</span></div>
+            <h6 class="card-content">We only list those websites that have passed our verification process and that which are of quality.</h6>
+        </div>
+      </div>      
+    </div>
+    <div class="row">
+      <div class="col l1" style="width: 10% !important;"></div>
+      <div class="col s12 m12 l3">
+          <div class="card shadow hoverable" >
+            <div class="card-head"><span class="center white-text">Hands-off</span></div>
+            <h6 class="card-content" >Once you submit the site to us we do not bug you unnecessarily with phone calls, but once the site is sold you need to provide 30-days support to the new buyer.</h6>
+        </div>
+      </div> 
+      <div class="col l1" style="width: 2% !important;"></div>
+       <div class="col s12 m12 l3">
+          <div class="card shadow hoverable ">
+            <div class="card-head"><span class="center white-text">Quick sale</span></div>
+            <h6 class="card-content">Once you submit the site to us, we through marketing channels help you attract buyers for the asset and help you sell the asset much faster.</h6>
+        </div>
+      </div> 
+      <div class="col l1" style="width: 2% !important;"></div>
+       <div class="col s12 m12 l3">
+          <div class="card shadow hoverable">
+            <div class="card-head"><span class="center white-text">Migration Process</span></div>
+            <h6 class="card-content">The seller can relax once the site is sold as we take care of the transferring part of your business to the new buyer. We are a Done-for-you service.</h6>
+        </div>
+      </div> 
+    </div>
+
+
+  
+  
+	<!-- FAQ -->
+	<section>
+		<div class="container" style="margin: 2rem;">
+			<div class="accordion">
+				<div class="accordion-item" id="q1">
+					<a href="#q1" class="accordion-link">1. How do I sell the website on your Marketplace? <i class="material-icons downn">keyboard_arrow_down</i><i class="material-icons upp">keyboard_arrow_up</i></a>
+					<div class="answer">
+						<p>You can go to our “Sell a site ” page and click on the “Submit” button and once it has gone through our verification process we will list the website without any Listing fee. </p>
+					</div>
+					
+				</div>
+				<div class="accordion-item" id="q2">
+					<a href="#q2" class="accordion-link">2. How Long does it take for you to sell the site? <i class="material-icons downn">keyboard_arrow_down</i><i class="material-icons upp">keyboard_arrow_up</i></a>
+					<div class="answer">
+						<p>We help you attract buyers through our marketing efforts and we expect you to list with us for a minimum period of 3 months. If you are unhappy you can always de-list the website from our marketplace and list it elsewhere.</p>
+					</div>
+					
+				</div>
+				<div class="accordion-item" id="q3">
+					<a href="#q3" class="accordion-link">3. Are there any fees when we sell a site with you ? <i class="material-icons downn">keyboard_arrow_down</i><i class="material-icons upp">keyboard_arrow_up</i></a>
+					<div class="answer">
+						<p>There are no upfront fees when you list the website. However, you know that the payment gateway subtracts a fee when we send the funds to you. Hence we charge a 10% success fee.</p>
+					</div>
+					
+				</div>
+				<div class="accordion-item" id="q4">
+					<a href="#q4" class="accordion-link">4. What Information is required from the seller’s side? <i class="material-icons downn">keyboard_arrow_down</i><i class="material-icons upp">keyboard_arrow_up</i></a>
+					<div class="answer">
+						<p>In order to speed up the verification process, we require you to fill in all the necessary details in the “Evaluation” form which includes screenshots of income from the actual site’s dashboard as well as the analytics account that is associated with the site.</p>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+	</section>
+            
+  <!-- Footer -->
+  <footer class="page-footer deep-purple">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <h6 class="center">All the copyrights are reserved by FlipEazy</h6>
+      
+      </div>
+    </div>
+
+  </footer>
+  <script type="text/javascript">
+
+  </script>
+
+</body>
+</html>
