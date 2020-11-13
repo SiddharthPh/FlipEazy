@@ -7,6 +7,7 @@
   <title>Marketplace-home</title>
 
   <!-- CSS  -->
+  <link rel="stylesheet" type="text/css" href="../../static/main/css/index.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -20,7 +21,7 @@
       <ul class="right hide-on-med-and-down">
         <li><a class="white-text" href="{% url 'blog' %}">Blog</a> </li>
         <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li>
-        <li><a class="white-text modal-trigger"data-target="modal1">Login</a></li>
+        <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
         <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
         <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" href="{% url 'valuationtool' %}" style="font-weight: bold;border-radius:0.3rem;" >Free Valuation Trial</a></li>
       </ul>
@@ -31,7 +32,7 @@
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-      <div id="modal1" class="modal bg" style="width: 30%">
+      <!-- <div id="modal1" class="modal bg" style="width: 30%">
         <div class="modal-content">
           <div id="login" class="modal1">
             <div class="modal-content center">
@@ -90,7 +91,7 @@
 
           </div>
         </div>
-      </div>
+      </div> -->
   <!-- ValuationTool Modal -->
   <!-- Modal Structure -->
   <!-- <div id="modalid2" class="modal bg" style="width: 30%">
@@ -113,9 +114,9 @@
         <div class="modal-content center">
           <h4>Email Address</h4>
           <br>
-          <!-- <form action="submit" method="POST"> 
+          <form action="submit" method="POST"> 
           <form action="#">
-            <!-- {% csrf_token %} --
+             {% csrf_token %} --
             <div class="input-field">
               <i class="material-icons prefix">email</i>
                 <input required type="text" id="Email" name="mail">
@@ -131,7 +132,7 @@
           <br>
           <form action="#">
             <div class="input-field">
-              <!-- <i class="material-icons prefix">attach_money</i> --
+               <i class="material-icons prefix">attach_money</i> --
                 <input required type="text" id="traffic">
                 <label for="traffic">Traffic per month $</label>
             </div>
@@ -178,7 +179,7 @@
 <div class="row">
     <h3 class="center deep-purple-text" style="margin-top: 4rem;">Why Choose Us?</h3>
 </div>
-   Info --
+  
   <div class="row" style="margin-bottom: 3rem;">
 
     <div class="col s3" style="margin-left: 5rem;">
@@ -202,7 +203,7 @@
       </div>
     </div>
   </div>
-  Footer --
+ 
   <footer class="page-footer deep-purple">
     <div class="container">
       <div class="row">

@@ -7,13 +7,19 @@ import json
 def home_page(request):
     return render(request,'main/index.html')
 def login(request):
-    return render(request, 'main/login.html')
+    return render(request, 'main/log_sign.html')
 def marketplace(request):
     return render(request, 'main/Marketplace.html')
 def blog(request):
     return render(request, 'main/WHAT FACTORS DETERMINES YOUR WEBSITES WORTH.html')
 def contact_us(request):
     return  render(request,'main/contact_us.html')
+def buysite(request):
+    return render(request,'main/buy_site.html')
+def sellsite(request):
+    return render(request,'main/sell_site.html')
+def about_us(request):
+    return render(request,'main/aboutus.html')
 def valuationtool(request):
     return render(request, 'main/valuationtool.html')
 def data_submit(request):

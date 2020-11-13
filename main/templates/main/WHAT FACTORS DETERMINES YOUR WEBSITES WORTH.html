@@ -15,14 +15,14 @@
 <body style="background-color: rgba(205,205,205,0.01);">
 	<nav class=" deep-purple" role="navigation">
     	<div class="nav-wrapper container"style=" width: 100%; ">
-      <a  href="#" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;">FlipEazy</a>
+      <a  href="{% url 'home_page' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;">FlipEazy</a>
 
       <ul class="right hide-on-med-and-down">
-        <li><a class="white-text" href="#">Blog</a> </li>
-        <li><a class="white-text" href="#">Marketplace</a></li>
-        <li><a class="white-text modal-trigger"data-target="modal1" href="#">Login</a></li>
-        <li><a class="white-text" href="#">Contact Us</a></li>
-        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" data-target="modalid2" style="font-weight: bold;border-radius:0.3rem;" href="#" >Free Valuation Trial</a></li>
+        <li><a class="white-text" href="{% url 'blog' %}">Blog</a> </li>
+        <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li>
+        <li><a class="white-text modal-trigger"data-target="modal1" href="{% url 'login' %}">Login</a></li>
+        <li><a class="white-text" href="{% url 'about_us' %}">Contact Us</a></li>
+        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" data-target="modalid2" style="font-weight: bold;border-radius:0.3rem;" href="{% url 'valuationtool' %}" >Free Valuation Trial</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">

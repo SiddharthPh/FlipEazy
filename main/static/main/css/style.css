@@ -5,10 +5,129 @@
  *
  * Made By MaterializeCSS.com
  */
+ *,
+ *::before,
+ *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  box-sizing: border-box;
+ }
+  .banner{
+  width: 100%;
+  height: auto;
+  background-color: #312a50;
+  object-fit: cover;
+  background-image: url(../../static/main/images/homepage_background.png);
+ }
+ .link-button{
+  font-weight: bold; 
+  display: inline-block;
+  margin:1.5rem; 
+  padding:0 2.2rem;
+  border-radius: 0.5rem !important;  
+}
+.card-content{
+  padding: 1rem 1.5rem;
+  text-align: left;
+}
+.card-head{
+  height: 3rem;
+  background-color: #312a50;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+   padding: 0.3rem;
+   text-align: center;
+}
+span{
+  line-height: 2.3rem;
+  font-weight: 450 ; 
+  font-size: 1.3rem;
+} 
+.shadow{
+  box-shadow: 1px 1px 4px 0px #312a50;
+  border-radius:  0.5rem !important;
+  min-height: 196px;
+}
 
+section{
+  width: 100%;
+    
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   
+}
+
+.accordion-item{
+  background-color: #312a50;
+  border-radius: .4rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: .5rem 2px .5rem rgba(0,0,0,.1);
+}
+.accordion-link{
+  font-size: 1.6rem;
+  color:#fff;
+  text-decoration: none;
+  background-color: #312a50;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+
+}
+.accordion-link i {
+  color:#fff;
+  padding: .5rem;
+}
+.accordion-link .upp{
+  display: none;
+}
+.answer{
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: #212838;
+  transition:max-height 650ms;
+
+}
+.answer::before{
+  content: "";
+  position: absolute;
+  width: .6rem;
+  height: 90%;
+  background-color: #312a97;
+  top:50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.answer p{
+  font-size: 1.4rem;
+  color:rgb(255,255,255);
+  padding: 2rem;
+
+}
+.accordion-item:target .answer{
+  max-height: 20rem;
+}
+.accordion-item:target .accordion-link .downn{
+  display: none;
+}
+.accordion-item:target .accordion-link .upp{
+  display: block;
+}
+
+span{
+  margin-top: 1rem;
+}
 
 p {
   line-height: 2rem;
+  font-size: 18px;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .sidenav-trigger {
@@ -16,7 +135,7 @@ p {
 }
 
 .parallax-container {
-  min-height: 380px;
+  min-height: 23rem;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
