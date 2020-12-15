@@ -10,8 +10,18 @@
   <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: rgba(205,205,205,0.01);">
+<style type="text/css">
+  .banner{
+width: 100%;
+height: auto;
+background-color: #312a50;
+object-fit: cover;
+background-image: url(../../static/main/images/homepage_background.png)!important;
+}
+</style>
+<body style="background-color: rgba(205,205,205,0.01);font-family: PT Sans;">
   <!-- Navbar -->
    <nav class=" deep-purple" role="navigation">
     <div class="nav-wrapper container" style="width: 100%;">
@@ -20,9 +30,9 @@
       <ul class="right hide-on-med-and-down">
         <!-- <li><a class="white-text" href="index.html">Home</a></li> -->
         <li><a class="white-text" href="{% url 'blog' %}">Blog</a> </li>
-        <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li>
+        <!-- <li><a class="white-text" href="#">Marketplace</a></li> -->
         <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
-        <li><a class="white-text" href="{% url 'about_us' %}">Contact Us</a></li>
+        <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
         <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" data-target="modalid2" style="font-weight: bold;border-radius:0.3rem;" href="{% url 'valuationtool' %}" >Free Valuation Trial</a></li>
       </ul>
 
@@ -31,9 +41,9 @@
         <li style=" background-color: #312a50;border-radius: 2rem;"><a class="white-text center" href="#" style="font-weight: 500;font-family: Rancho;font-size: 20px;">FlipEazy</a></li>
         <!-- <li><a class="center" href="index.html">Home</a></li> -->
         <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
-        <li><a class="center" href="{% url 'marketplace' %}">MarketPlace</a></li>
-        <li><a class="center" href="{% url 'login' %}">Login</a></li>
-        <li><a class="center" href="{% url 'about_us' %}">Contact Us</a></li>
+        <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
+        <li><a class="center" href="l{% url 'login' %}">Login</a></li>
+        <li><a class="center" href="{% url 'contact_us' %}">Contact Us</a></li>
         <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Trial</a></li>
       </ul>
       
@@ -66,31 +76,51 @@
   </div>
   
 </div>
-<div>
-  <h2 style="text-align: center;font-weight: 500;margin-top: 50px;">Label</h2>
+<div style="margin-bottom: 4em;">
+  <h2 style="text-align: center;font-weight: 500;margin-top: 50px;">Team Lead</h2>
   <div class="row ">
-    <div class="col s12 m4 offset-m4">
-        <img src="../../static/main/images/rohit.jpg" style="max-width: 80%;height: auto;border-radius: 40px;box-shadow: 0px 4px 5px 0px #312a50;margin: 2rem 2rem; ">
-        <p style="font-size: 24px;font-weight: 500;text-align: center;">Rohit Sharma</p><br>         
-    </div>    
+    <div class="col offset-m4 " style="text-align: center;">
+      <img src="../../static/main/images/vivek.jpeg" style="max-width: 55%;">
+      <p class="names ">Vivek Bhat</p><br>         
+  </div>    
   </div>
-  <h2 style="text-align: center;font-weight: 500;">Label</h2>
+  <h2 style="text-align: center;font-weight: 500;">Web Development</h2>
   <div class="row" style="margin: auto;text-align: center;">
     <div class="col s12 m4 ">
-        <img src="../../static/main/images/rohit.jpg" style="max-width: 80%;height: auto;border-radius: 40px;box-shadow: 0px 4px 5px 0px #312a50;margin: 2rem 2rem; ">
-        <p style="font-size: 24px;font-weight: 500;text-align: center;">Rohit Sharma</p><br>         
+        <img src="../../static/main/images/teja.jpeg" style="max-width: 60%; ">
+        <p class="names">Sai Teja Suggala</p><br>         
+
     </div> 
      <div class="col s12 m4">
-        <img src="../../static/main/images/rohit.jpg" style="max-width: 80%;height: auto;border-radius: 40px;box-shadow: 0px 4px 5px 0px #312a50;margin: 2rem 2rem; ">
-        <p style="font-size: 24px;font-weight: 500;text-align: center;">Rohit Sharma</p><br>         
+        <img src="../../static/main/images/sid.jpeg" style="max-width: 56%; ">
+        <p class="names">Siddhartha Pothukuchi</p><br>         
     </div> 
      <div class="col s12 m4 ">
-        <img src="../../static/main/images/rohit.jpg" style="max-width: 80%;height: auto;border-radius: 40px;box-shadow: 0px 4px 5px 0px #312a50;margin: 2rem 2rem; ">
-        <p style="font-size: 24px;font-weight: 500;text-align: center;">Rohit Sharma</p><br>         
+        <img src="../../static/main/images/Milind.jpeg" style="max-width: 60%;">
+        <p class="names">Milind Kesar Thummala</p><br>         
     </div> 
   </div>
 </div>
-<footer class="page-footer deep-purple">
+<p class="grey-text " style="font-size: 3rem;text-align: center;line-height: 1.4;"> Contact Us Form to be added here</p>
+<style type="text/css">
+	.row img{
+		height: auto;
+		border-radius: 40px;
+		box-shadow: 0px 4px 5px 0px #312a50;
+		margin: 2rem 2rem; 
+	}
+	.names{
+		font-size: 24px;
+		font-weight: 500;
+		margin-left: 3%;
+	}
+	/* @media only screen and (max-width: 700px){
+			.pic{
+				max-width: 56% !important;
+			}
+	} */
+</style>
+<footer class="page-footer deep-purple" style="margin-top: 3rem;">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -161,8 +191,11 @@
     }
   </style>
   
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+ <script type="text/javascript">
+     var elem = document.querySelector('.sidenav');
+  var instance = new M.Sidenav(elem);
+  </script>
  
 
   </body>

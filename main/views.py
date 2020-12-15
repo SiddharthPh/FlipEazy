@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect,HttpResponse
 # from main.forms import toolform
+from django.contrib.auth.models import User, auth
+from django.contrib import messages
 from .models import tool
 import json
 # Create your views here.
@@ -11,17 +13,58 @@ def login(request):
 def marketplace(request):
     return render(request, 'main/Marketplace.html')
 def blog(request):
-    return render(request, 'main/WHAT FACTORS DETERMINES YOUR WEBSITES WORTH.html')
+    return render(request, 'main/blog.html')
 def contact_us(request):
-    return  render(request,'main/contact_us.html')
+    return  render(request,'main/aboutus.html')
 def buysite(request):
     return render(request,'main/buy_site.html')
 def sellsite(request):
     return render(request,'main/sell_site.html')
-def about_us(request):
-    return render(request,'main/aboutus.html')
+# def about_us(request):
+#     return render(request,'main/aboutus.html')
 def valuationtool(request):
     return render(request, 'main/valuationtool.html')
+def email_list(request):
+    return render(request, 'main/EmailList.html')
+def automation(request):
+    return render(request, 'main/Automation.html')
+def factors(request):
+    return render(request, 'main/WHAT FACTORS DETERMINES YOUR WEBSITES WORTH.html')
+def whymarket_place(request):
+    return render(request,'main/whymarketplace.html')
+def onlinebusiness(request):
+    return render(request, 'main/What_is_an_Online_Business_Why_should_you_Own_One.html')
+def leveragecontent(request):
+    return render(request,'main/LeverageContent.html')
+def signin_submit(request):
+    if request.method=='POST':
+        username=request.POST['username1']
+        password=request.POST['password1']
+        user= auth.authenticate(username=username,password=password)
+        if user is not None:
+            auth.login(request,user)
+            return redirect('/')
+        else:
+            messages.info(request,'invalid Credentials')
+            return redirect('/login')
+
+
+def signup_submit(request):
+    if request.method =='POST':
+        username=request.POST['username']
+        email=request.POST['email']
+        password=request.POST['password']
+        if User.objects.filter(username=username).exists():
+            messages.info(request,'Username Taken')
+            return redirect('/login')
+        else:
+            user=User.objects.create_user(username=username, email=email, password=password)
+            user.save()
+            print("user created")
+            return redirect('/')
+    else:
+        return redirect('/login')
+
 def data_submit(request):
     # form = NameForm(request.GET)
     # form.your_name=
@@ -37,7 +80,7 @@ def data_submit(request):
         # tool_obj=tool(name=name1)
         # tool_obj.name=name1
         # tool_obj.save()
-        return HttpResponse('Success')
+    return render(request,'main/charts.html')
 # def submit(request):
 #    if request.method =='POST':
 #         mail=request.POST.get('mail')

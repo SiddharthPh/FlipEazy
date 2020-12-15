@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Valuation Tool</title>
+	<!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  
+
+</head>
+<body style="background-color: #312a50;font-size: PT">
+	<nav class=" deep-purple" role="navigation">
+    	<div class="nav-wrapper container"style=" width: 100%; ">
+			<a  href="{% url 'home_page' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a class="white-text" href="{% url 'blog'%}">Blog</a> </li>
+        <!-- <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li> -->
+        <li><a class="white-text modal-trigger"data-target="modal1" href="{% url 'login' %}">Login</a></li>
+        <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
+        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" style="font-weight: bold;border-radius:0.3rem;" href="{% url 'valuationtool' %}" >Free Valuation Trial</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    	</div>
+    </nav>
+   
+    <div class="container">
+    <div class="row" style="margin-bottom: 10em;margin-top: 7rem;">
+      <div class="col s12 l6 m6" >
+          <h3 class="white-text" style="text-align: center;font-weight: bold;">Estimated Worth of <br> Your Website</h3>
+          <p class="orange-text center" style="font-weight: bold;font-size: 5rem;margin-top: 4rem;" id="output"></p>
+      </div>
+      <script>
+        var value=sessionStorage.getItem("recommended")
+        console.log(value)
+        document.getElementById("output").innerHTML="$"+value.toString()
+      </script>
+      <div class="col s12 l6 m6" >
+          <!-- <canvas id="myChart" width="500"></canvas> -->
+          <img src="../../static/main/images/undraw_visual_data_b1wx (3).svg" width="100%" height="auto">
+      </div>
+    </div>
+</div>
+    

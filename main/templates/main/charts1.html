@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Valuation Tool</title>
+	<!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+  
+
+</head>
+<body style="background-color: #312a50;">
+	<nav class=" deep-purple" role="navigation">
+    	<div class="nav-wrapper container"style=" width: 100%; ">
+			<a  href="{% url 'home_page' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a class="white-text" href="{% url 'blog'%}">Blog</a> </li>
+        <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li>
+        <li><a class="white-text modal-trigger"data-target="modal1" href="{% url 'login' %}">Login</a></li>
+        <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
+        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" style="font-weight: bold;border-radius:0.3rem;" href="{% url 'valuationtool' %}" >Free Valuation Trial</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    	</div>
+    </nav>
+    <canvas id="myChart" width="80" height="30"></canvas>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+      <script>
+      var ctx = document.getElementById('myChart');
+		// 	<!-- var myLineChart = new Chart(ctx, {
+    //     type: 'line',
+    //     data: [1,1,1,1]
+    //     options: options
+    // });  -->
+    var least=sessionStorage.getItem("least");
+    var less=sessionStorage.getItem("less");
+    var recommended=sessionStorage.getItem("recommended");
+    var more=sessionStorage.getItem("more");
+    var most=sessionStorage.getItem("most");
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Least_Recommended', 'Less Recommended', 'Recommended', 'More Recommended', 'Most Recommended'],
+        datasets: [{
+        label: 'Selling Price',
+        data: [least, less, recommended, more, most],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
+  }]
+},
+options: {
+  scales: {
+      yAxes: [{
+          ticks: {
+              beginAtZero: true
+          }
+      }]
+  }
+}
+});
+</script>

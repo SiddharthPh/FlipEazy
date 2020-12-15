@@ -10,17 +10,19 @@
   <link rel="stylesheet" type="text/css" href="../../static/main/css/index.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <!-- <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
   <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </head>
-<body style="background-color: rgba(205,205,205,0.01);">
+<body style="background-color: rgba(205,205,205,0.01);font-family: PT Sans;">
   <nav class=" deep-purple" role="navigation">
     <div class="nav-wrapper container"style=" width: 100%; ">
       <a  href="{% url 'home_page' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
-
       <ul class="right hide-on-med-and-down">
         <li><a class="white-text" href="{% url 'blog' %}">Blog</a> </li>
-        <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li>
+        <!-- <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li> -->
         <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
         <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
         <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" href="{% url 'valuationtool' %}" style="font-weight: bold;border-radius:0.3rem;" >Free Valuation Trial</a></li>
@@ -29,7 +31,16 @@
       <ul id="nav-mobile" class="sidenav">
         <li><a href="#">Navbar Link</a></li>
       </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="sidenav">
+        <li style=" background-color: #312a50;border-radius: 2rem;"><a class="white-text center" href="#" style="font-weight: 500;font-family: Rancho;font-size: 20px;">FlipEazy</a></li>
+        <!-- <li><a class="center" href="index.html">Home</a></li> -->
+        <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
+        <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
+        <li><a class="center" href="{% url 'login' %}">Login</a></li>
+        <li><a class="center" href="{% url 'contact_us' %}">Contact Us</a></li>
+        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Trial</a></li>
+      </ul>
     </div>
   </nav>
       <!-- <div id="modal1" class="modal bg" style="width: 30%">
@@ -172,7 +183,18 @@
 
     </div>
   </div> -->
-
+  <div class="banner">
+    <div class="section no-pad-bot">
+      <div class="container">        
+        <h1 class="center white-text">Buy and Sell</h1>
+        <h2 class="center white-text" style="margin-top: 1rem;">Quality Low-End Websites</h2>
+        <div style="text-align: center; height: 10rem;">          
+             <a href="{% url 'buysite' %}" class="reddishblack-text btn-large white  waves-effect link-button" >Buy a Site</a> 
+              <a href="{% url 'sellsite' %}" class="reddishblack-text btn-large white  waves-effect link-button">Sell a Site</a>                                 
+        </div>     
+      </div>
+    </div>
+  </div>
 
   {% block content %}{% endblock %}
 </div>
@@ -204,6 +226,31 @@
     </div>
   </div>
  
+  <h2 class="center"><strong>Check Out Our Blogs</strong></h2>
+  <h6 class="grey-text center">This Section is Under development</h6><br>
+  <div class="main-carousel " data-flickity='{ "wrapAround":true, "autoPlay":2000}' tabindex="0" >
+    <div class="carousel-cell  " ><a href="{% url 'email_list' %}"><img  src="../../static/main/images/MAIL.jpg" ></a></div>
+    <div class="carousel-cell "><a href="{% url 'automation' %}"><img  src="../../static/main/images/Automation.jpg" ></a></div>
+    <div class="carousel-cell "><a href="{% url 'whymarketplace' %}"><img  src="../../static/main/images/MARK.jpg" ></a></div>
+    <div class="carousel-cell "><a href="{% url 'blog' %}"><img  src="../../static/main/images/FACTORS.jpg" ></a></div>
+    <div class="carousel-cell "><a href="{% url 'onlinebusiness' %}"><img  src="../../static/main/images/blog1_thumb.jpg" ></a></div>
+    <div class="carousel-cell "><a href="{% url 'leverage' %}"><img src="../../static/main/images/Lev content.jpg" ></a></div>    
+  </div>
+
+  <style>
+    .carousel-cell{
+      margin: 0.2rem;
+     
+    }
+    .main-carousel{
+      margin-bottom: 6rem;
+    }
+    .carousel-cell img{
+      border-radius: 1.2rem;
+    }
+  </style>
+
+
   <footer class="page-footer deep-purple">
     <div class="container">
       <div class="row">
@@ -248,10 +295,11 @@
   <script src="../../static/main/js/materialize.js"></script>
   <script src="../static/main/js/init.js"></script>
   <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, options);
-  });
+  
+  //   document.addEventListener('DOMContentLoaded', function() {
+  //   var elems = document.querySelectorAll('.modal');
+  //   // var instances = M.Modal.init(elems, options);
+  // });
 
   // Or with jQuery
 

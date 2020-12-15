@@ -8,6 +8,9 @@
   <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  
+
 </head>
 <body style="background-color: #312a50;">
 	<nav class=" deep-purple" role="navigation">
@@ -15,10 +18,10 @@
 			<a  href="{% url 'home_page' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
 
       <ul class="right hide-on-med-and-down">
-        <li><a class="white-text" href="#">Blog</a> </li>
-        <li><a class="white-text" href="#">Marketplace</a></li>
-        <li><a class="white-text modal-trigger"data-target="modal1" href="#">Login</a></li>
-        <li><a class="white-text" href="#">Contact Us</a></li>
+        <li><a class="white-text" href="{% url 'blog'%}">Blog</a> </li>
+        <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li>
+        <li><a class="white-text modal-trigger"data-target="modal1" href="{% url 'login' %}">Login</a></li>
+        <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
         <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" style="font-weight: bold;border-radius:0.3rem;" href="{% url 'valuationtool' %}" >Free Valuation Trial</a></li>
       </ul>
 
@@ -28,7 +31,7 @@
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     	</div>
     </nav>
- 	<div>
+ 	<!-- <div>
  		<br><h1 class="center white-text" style="font-family: Rancho;font-size: 8.5rem;">FlipEazy</h1> 
  		<div class="center">
  			<a  id="started" class="btn-large white reddishblack-text waves-effect" style="border-radius: 0.3rem; font-weight: bold;margin-top: 7rem;" onclick="switchToFullName()">Get Started</a>
@@ -81,8 +84,79 @@
 				<h3 class="white-text">Web site value is</h3>
 				<h4 class="white-text" id="output"></h4>
 			</div>	 					
+			<canvas id="myChart" width="400" height="400"></canvas>
+			<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+			
  		</div>
- 	</div>
+	 </div> -->
+	 
+	 <div class="container card center hoverable " style="width: 45%;margin-left:26rem;margin-top:2rem;padding: 1.3rem;background-color: #312d50;">
+		<div class="row">
+		  <h3 class="center white-text">Valuation Form</h3>
+		  <div class="col s12 l12 mar" >
+			  <input  type="text" id="url" name="" placeholder="URL(www.example.com)">    
+		  </div>
+	  
+		  <div class="col s12 l6 mar">
+			<input type="text" id="first_name" name="" placeholder="First Name">   
+		  </div>
+		  <div class="col s12 l6 mar">
+			<input type="text" id="last_name" name="" placeholder="Last Name">   
+		  </div>
+		  <div class="col s12 l12 mar">
+			  <input type="Email" id="email_add" name="" placeholder="Email Address">    
+		</div>
+		<!-- <div class="col s2 l2 mar">
+		  <input class="center" id="pnumber" name="" value="+91">
+		</div>  
+		<div class="col s10 l10 mar">
+			  <input  name="" placeholder="Phone Number">    
+		</div>    -->
+		<div class="col s12 l12 mar">
+			  <input type="text" id="annual_revenue" name="" placeholder="Monthly Revenue">    
+		</div>     
+		  <div class="col s12 l12 mar">
+			  <input type="text" id="annual_profit" name="" placeholder="Monthly Profit">    
+		</div> 
+		<div class="col s12 l12 mar">
+			<input type="text" id="traffic_month" name="" placeholder="Traffic per month(Over past 6months)">    
+	  </div> 
+		<div class="col s12 l12">
+		   <a href="{% url 'data_submit'%}" class="reddishblack-text btn-large white  waves-effect link-butn" onclick="switchToOut()" >Submit</a> 
+		</div>
+		</div>
+		
+	  </div>
+	</body>
+	<style type="text/css">
+	  input{
+		border:2px solid #fff !important;
+		color: #fff;
+		box-sizing: border-box;
+		padding-left: 1px !important;
+	
+	  }
+	
+		 ::value{
+		  color: #fff;
+		  padding: 2em;
+		}
+	  ::placeholder{
+		color:#fff;
+		padding-left: 1rem; 
+	  }
+	 .mar{
+	  margin-top: 1.4rem;
+	 }
+	 .link-butn{
+	  font-weight: bold; 
+	  display: inline-block;
+	  margin-top:1rem; 
+	  padding:0 2.2rem;
+	  border-radius: 0.5rem !important;  
+	}
+	</style>
+
  		
 
  		<script type="text/javascript">
@@ -142,26 +216,93 @@
 			}
 			
 			function switchToOut(){
-				var name1= document.getElementById("name_text").value
-				console.log(name1)
-				var url_name=document.getElementById("url_text").value
-				console.log(url_name)
-				var revenue_calc=document.getElementById("revenue_text").value
-				console.log(revenue_calc)
-				var profit_calc=document.getElementById("profit_text").value
-				var traffic_calc=document.getElementById("traffic_text").value
-				var email_calc=document.getElementById("email_text").value
-				var obj = { name: name1, email: email_calc, url: url_name };
-				console.log(obj)
-				console.log(profit_calc)
-				console.log(traffic_calc)
-				profit_calc=parseFloat(profit_calc)
-				traffic_calc=parseFloat(traffic_calc)
-				var value_out=(profit_calc+(profit_calc/traffic_calc))*25
-				document.getElementById("output").innerHTML=value_out.toString()
-				console.log(value_out)
+				var url=document.getElementById("url").value
+				var first_name= document.getElementById("first_name").value
+				// console.log(name1)
+				var last_name=document.getElementById("last_name").value
+				var name=first_name+last_name
+				var email_add=document.getElementById("email_add").value
+				var annual_revenue=document.getElementById("annual_revenue").value
+				var annual_profit=document.getElementById("annual_profit").value
+				var traffic_month=document.getElementById("traffic_month").value
+				// var url_name=document.getElementById("url_text").value
+				// console.log(url_name)
+				// var revenue_calc=document.getElementById("revenue_text").value
+				// console.log(revenue_calc)
+				// var profit_calc=document.getElementById("profit_text").value
+				// var traffic_calc=document.getElementById("traffic_text").value
+				// var email_calc=document.getElementById("email_text").value
+				// var obj = { name: name1, email: email_calc, url: url_name };
+				// console.log(obj)
+				// console.log(profit_calc)
+				// console.log(traffic_calc)
+				annual_profit_calc=parseFloat(annual_profit)
+				monthly_profit=annual_profit
+				traffic_calc=parseFloat(traffic_month)
+				// var least_value_out=(monthly_profit)*22
+				// var less_value_out=(monthly_profit)*25
+				var value_out=(monthly_profit)*27
+				// var more_value_out=(monthly_profit+(monthly_profit/traffic_calc))*29
+				// var most_value_out=(monthly_profit+(monthly_profit/traffic_calc))*32
+				// document.getElementById("output").innerHTML=value_out.toString()
+				var output_obj={name:name,email:email_add,url:url }
+				// sessionStorage.setItem("least",least_value_out);
+				// sessionStorage.setItem("less",less_value_out);
+				sessionStorage.setItem("recommended",value_out);
+				// sessionStorage.setItem("more",more_value_out);
+				// sessionStorage.setItem("most",most_value_out);
+				// console.log(value_out)
 				// var myJSON = JSON.stringify(name1);
 				// console.log(myJSON)
+
+				// var myLineChart = new Chart(ctx, {
+    			// 		type: 'line',
+   				// 		data: [10,10,10],
+				// 		options: options
+				// });
+					// const chart=document.getElementById("myChart");
+					// console.log(chart);
+
+
+// 					var ctx = document.getElementById('myChart');
+// 					var myChart = new Chart(ctx, {
+//     				type: 'bar',
+//     				data: {
+//         			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+//         			datasets: [{
+//             	label: '# of Votes',
+//             	data: [12, 19, 3, 5, 2, 3],
+//             	backgroundColor: [
+//                 'rgba(255, 99, 132, 0.2)',
+//                 'rgba(54, 162, 235, 0.2)',
+//                 'rgba(255, 206, 86, 0.2)',
+//                 'rgba(75, 192, 192, 0.2)',
+//                 'rgba(153, 102, 255, 0.2)',
+//                 'rgba(255, 159, 64, 0.2)'
+//             ],
+//             borderColor: [
+//                 'rgba(255, 99, 132, 1)',
+//                 'rgba(54, 162, 235, 1)',
+//                 'rgba(255, 206, 86, 1)',
+//                 'rgba(75, 192, 192, 1)',
+//                 'rgba(153, 102, 255, 1)',
+//                 'rgba(255, 159, 64, 1)'
+//             ],
+//             borderWidth: 1
+//         }]
+//     },
+//     options: {
+//         scales: {
+//             yAxes: [{
+//                 ticks: {
+//                     beginAtZero: true
+//                 }
+//             }]
+//         }
+//     }
+// });
+
+
 				var xhttp = new XMLHttpRequest();	
 				xhttp.open("POST","{% url 'data_submit' %}", true)
 				xhttp.setRequestHeader('X-CSRFToken', csrftoken)
@@ -169,8 +310,9 @@
 				xhttp.send(json)	
 				xhttp.onreadystatechange = function() {
  					 if (this.readyState == 4 && this.status == 200) {
-						document.querySelector('#out').style.display='block';
- 				 		document.querySelector('#email').style.display='none';
+						// document.querySelector('#out').style.display='block';
+ 				 		// document.querySelector('#email').style.display='none';
+						  console.log("success")
   						}
 				};
 				
@@ -185,3 +327,4 @@
 
 </body>
 </html>
+

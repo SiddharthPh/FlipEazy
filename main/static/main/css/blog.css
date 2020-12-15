@@ -1,0 +1,14 @@
+ .banner{
+  width: 100%;
+  height: auto;
+  background-color: #312a50;
+  object-fit: cover;
+  background-image: url(../images/homepage_background.png)!important;
+ }
+ .link-button{
+  font-weight: bold; 
+  display: inline-block;
+  margin:1.5rem; 
+  padding:0 2.2rem;
+  border-radius: 0.5rem !important;  
+}
