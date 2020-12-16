@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-# import django_on_heroku
+import django_on_heroku
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -28,7 +28,7 @@ SECRET_KEY = "9db1683df3327b09301c58e47d8b83f34686d92eef04c042"
 DEBUG = True
 
 ALLOWED_HOSTS = ['saasmarketplace.herokuapp.com','127.0.0.1']
-# django_on_heroku.settings(locals())
+django_on_heroku.settings(locals())
 
 
 # Application definition
