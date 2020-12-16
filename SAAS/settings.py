@@ -28,7 +28,6 @@ SECRET_KEY = "9db1683df3327b09301c58e47d8b83f34686d92eef04c042"
 DEBUG = True
 
 ALLOWED_HOSTS = ['saasmarketplace.herokuapp.com','127.0.0.1']
-django_on_heroku.settings(locals())
 
 
 # Application definition
@@ -136,3 +135,4 @@ AWS_DEFAULT_ACL=None
 
 DEFAULT_FILE_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+django_on_heroku.settings(locals())
