@@ -6,40 +6,37 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: rgba(205,205,205,0.01);">
+<body style="background-color: rgba(205,205,205,0.01);font-family: PT Sans;">
 	<nav class=" deep-purple" role="navigation">
     <div class="nav-wrapper container" style="width: 100%;">
-      <a href="#" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="logo.png" width="222" height="55"></a>
-
+      <a  href="{% url 'home' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="white-text" href="index.html">Home</a></li>
-        <li><a class="white-text" href="blog.html">Blog</a> </li>
-        <li><a class="white-text" href="#">Marketplace</a></li>
-        <li><a class="white-text" href="log_sign.html">Login</a></li>
-        <li><a class="white-text" href="aboutus.html">Contact Us</a></li>
-        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" data-target="modalid2" style="font-weight: bold;border-radius:0.3rem;" href="valuationtool.html" >Free Valuation Trial</a></li>
+        <li><a class="white-text" href="{% url 'blog' %}">Blog</a> </li>
+        <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li>
+        <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
+        <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
+        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" href="{% url 'valuationtool' %}" style="font-weight: bold;border-radius:0.3rem;" >Free Valuation Trial</a></li>
       </ul>
 
       <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="sidenav">
         <li style=" background-color: #312a50;border-radius: 2rem;"><a class="white-text center" href="#" style="font-weight: 500;font-family: Rancho;font-size: 20px;">FlipEazy</a></li>
-        <li><a class="center" href="index.html">Home</a></li>
-        <li><a class="center" href="blog.html">Blogs</a></li>
-        <li><a class="center" href="#">MarketPlace</a></li>
-        <li><a class="center" href="log_sign.html">Login</a></li>
-        <li><a class="center" href="aboutus.html">Contact Us</a></li>
-        <li><a class="center" href="valuationtool.html">Free Valuation Trial</a></li>
+        <li><a class="center" href="{% url 'home' %}">Home</a></li>
+        <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
+        <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
+        <li><a class="center" href="{% url 'login' %}">Login</a></li>
+        <li><a class="center" href="{% url 'contact_us' %}">Contact Us</a></li>
+        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Trial</a></li>
       </ul>
-      
     </div>
   </nav>
-    <div ><img class="cover" src="MARK.jpg" width="100%"  alt="Marketplace" ></div><br><br>
+    <div ><img class="cover" src="../../static/main/images/MARK.jpg" width="100%"  alt="Marketplace" ></div><br><br>
     <style type="text/css">
       .content{
         line-height: 1.9;
@@ -159,15 +156,15 @@
       <div class="col s12 m12 l4">
           <div class="card hoverable">
           <div class="card-image">
-             <img src="Lev content.jpg"  ontouchstart="dp1()"    width="100%">
-              <a href="LeverageContent.html"class="btn-floating halfway-fab waves-effect waves-light red card-icon"><i class="material-icons large ">chrome_reader_mode</i></a>
+             <img src="../../static/main/images/Lev content.jpg"  ontouchstart="dp1()"    width="100%">
+              <a href="{% url 'leverage' %}"class="btn-floating halfway-fab waves-effect waves-light red card-icon"><i class="material-icons large ">chrome_reader_mode</i></a>
           </div>
           <div class="card-content">
             <p class="grey-text">19 Sept 2020</p>                
             <p class=" grey-text text-darken-2">Through our marketing strategies, we ensure that we are able to attract a lot of buyers and help you sell the website quickly and if nobody shows up you always have a choice of </p>
         </div>
          <div class="card-action">
-            <a href="LeverageContent.html" class="deep-orange-text deep-purple white-text btn" style="font-weight: 750;">Read More</a>
+            <a href="{% url 'leverage' %}" class="deep-orange-text deep-purple white-text btn" style="font-weight: 750;">Read More</a>
           </div>
       </div>
       </div>
@@ -176,15 +173,15 @@
           <div class="card hoverable">
 
           <div class="card-image">
-             <img src="blog1_thumb.jpg"  ontouchstart="dp2()"  width="100%">
-              <a href="What is an Online Business Why should you Own One.html" class="btn-floating halfway-fab waves-effect waves-light red card-icon"><i class="material-icons large">chrome_reader_mode</i></a>
+             <img src="../../static/main/images/blog1_thumb.jpg"  ontouchstart="dp2()"  width="100%">
+              <a href="{% url 'onlinebusiness' %}" class="btn-floating halfway-fab waves-effect waves-light red card-icon"><i class="material-icons large">chrome_reader_mode</i></a>
           </div>
           <div class="card-content">
             <p class="grey-text">19 Sept 2020</p>               
             <p class=" grey-text text-darken-2">Through our marketing strategies, we ensure that we are able to attract a lot of buyers and help you sell the website quickly and if nobody shows up you always have a choice of </p>
         </div>
          <div class="card-action">
-            <a href="What is an Online Business Why should you Own One.html" class="deep-orange-text btn deep-purple white-text" style="font-weight: 750;">Read More</a>
+            <a href="{% url 'onlinebusiness' %}" class="deep-orange-text btn deep-purple white-text" style="font-weight: 750;">Read More</a>
           </div>
       </div>
       </div>
@@ -192,15 +189,15 @@
           <div class="card hoverable">
 
           <div class="card-image">
-             <img src="MARK.jpg"  ontouchstart="dp3()"  width="100%">
-              <a href="whymarketplace.html" class="btn-floating halfway-fab waves-effect waves-light red card-icon"><i class="material-icons large ">chrome_reader_mode</i></a>
+             <img src="../../static/main/images/MARK.jpg"  ontouchstart="dp3()"  width="100%">
+              <a href="{% url 'whymarketplace' %}" class="btn-floating halfway-fab waves-effect waves-light red card-icon"><i class="material-icons large ">chrome_reader_mode</i></a>
           </div>
           <div class="card-content">
             <p class="grey-text">19 Sept 2020</p>                
             <p class=" grey-text text-darken-2">Through our marketing strategies, we ensure that we are able to attract a lot of buyers and help you sell the website quickly and if nobody shows up you always have a choice of </p>
         </div>
          <div class="card-action">
-            <a href="whymarketplace.html" class="deep-orange-text btn white-text deep-purple " style="font-weight: 750;">Read More</a>
+            <a href="{% url 'whymarketplace' %}" class="deep-orange-text btn white-text deep-purple " style="font-weight: 750;">Read More</a>
           </div>
       </div>
       </div>

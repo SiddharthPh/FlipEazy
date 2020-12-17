@@ -12,10 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: rgba(205,205,205,0.01);">
+<body style="background-color: rgba(205,205,205,0.01);font-family: PT Sans;">
   <nav class=" deep-purple" role="navigation">
     <div class="nav-wrapper container"style=" width: 100%; ">
-      <a  href="{% url 'home_page' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
+      <a  href="{% url 'home' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="white-text" href="{% url 'blog' %}">Blog</a> </li>
         <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li>
@@ -24,10 +24,16 @@
         <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" href="{% url 'valuationtool' %}" style="font-weight: bold;border-radius:0.3rem;" >Free Valuation Trial</a></li>
       </ul>
 
+      <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
+        <li style=" background-color: #312a50;border-radius: 2rem;"><a class="white-text center" href="#" style="font-weight: 500;font-family: Rancho;font-size: 20px;">FlipEazy</a></li>
+        <li><a class="center" href="{% url 'home' %}">Home</a></li>
+        <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
+        <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
+        <li><a class="center" href="{% url 'login' %}">Login</a></li>
+        <li><a class="center" href="{% url 'contact_us' %}">Contact Us</a></li>
+        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Trial</a></li>
       </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
     <div class="parallax"><img src="../../static/main/images/Automation.jpg" width="100%"  alt="How to build an e-mail list?" ></div><br><br>

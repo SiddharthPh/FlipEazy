@@ -81,6 +81,8 @@ def data_submit(request):
         # tool_obj.name=name1
         # tool_obj.save()
     return render(request,'main/charts.html')
+def sell_now(request):
+    return render(request,'main/sellnow.html')
 # def submit(request):
 #    if request.method =='POST':
 #         mail=request.POST.get('mail')

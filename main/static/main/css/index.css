@@ -3,12 +3,7 @@
   height: auto;
   background-color: #312a50;
   object-fit: cover;
-  background-image: url(../images/homepage_background.png)!important;
  }
- h5{
-  text-decoration: none !important ;
-  font-weight: 700 !important;
-  }
 .icons{
   width: 50%;
   height: auto;
@@ -22,6 +17,10 @@
   font-weight: 500;
   text-align: center;
 }
+h5{
+  text-decoration: none !important ;
+  font-weight: 700 !important;
+  }
 
 .shadow{
   box-shadow: 2px 2px 1px 2px rgba(0,0,0,0.2);
@@ -39,6 +38,7 @@
 #bus_list{
   margin-left: 3rem;padding: 1px; font-size: 20px;
 }
+}
 .card-content{
   padding: 1rem 1.5rem;
   text-align: left;
@@ -49,11 +49,11 @@ span{
   font-size: 1.3rem;
 }
 .headings{
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-weight: bold;
 }
 .link-button{
-  font-weight: bold; 
+  font-weight: 100; 
   display: inline-block;
   margin:1.5rem; 
   padding:0 2.2rem;
@@ -71,6 +71,11 @@ span{
   .mob_d{
     font-size: 2.4rem !important; 
   }
+   .carousel-cell img{
+    
+    width: 410px;
+
+  }
 }
   @media only screen and (max-width: 400px) {
   .texts  {
@@ -83,4 +88,10 @@ span{
   .mob_d{
     font-size: 2rem !important; 
   }
-}
+  .carousel-cell img{
+    
+    width: 300px;
+
+  }
+
+  }

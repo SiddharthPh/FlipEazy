@@ -12,20 +12,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 </head>
-<style type="text/css">
-  .banner{
-width: 100%;
-height: auto;
-background-color: #312a50;
-object-fit: cover;
-background-image: url(../../static/main/images/homepage_background.png)!important;
-}
-</style>
 <body style="background-color: rgba(205,205,205,0.01);font-family: PT Sans;">
   <!-- Navbar -->
    <nav class=" deep-purple" role="navigation">
     <div class="nav-wrapper container" style="width: 100%;">
-      <a href="{% url 'home_page' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
+      <a href="{% url 'home' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
 
       <ul class="right hide-on-med-and-down">
         <!-- <li><a class="white-text" href="index.html">Home</a></li> -->
@@ -39,10 +30,10 @@ background-image: url(../../static/main/images/homepage_background.png)!importan
       <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="sidenav">
         <li style=" background-color: #312a50;border-radius: 2rem;"><a class="white-text center" href="#" style="font-weight: 500;font-family: Rancho;font-size: 20px;">FlipEazy</a></li>
-        <!-- <li><a class="center" href="index.html">Home</a></li> -->
+        <li><a class="center" href="{% url 'home' %}">Home</a></li>
         <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
         <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
-        <li><a class="center" href="l{% url 'login' %}">Login</a></li>
+        <li><a class="center" href="{% url 'login' %}">Login</a></li>
         <li><a class="center" href="{% url 'contact_us' %}">Contact Us</a></li>
         <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Trial</a></li>
       </ul>
@@ -51,7 +42,7 @@ background-image: url(../../static/main/images/homepage_background.png)!importan
   </nav>
   <!-- Navbar -->
     <!-- Banner -->
-    <div class="banner">
+    <div class="banner" style="background-image: url(../../static/main/images/homepage_background.png);">
     <div class="section no-pad-bot">
       <div class="container">        
         <h1 class="center white-text" style="font-family: 'Pridi', serif;margin-bottom: 6%;">About Us </h1>                
@@ -101,7 +92,6 @@ background-image: url(../../static/main/images/homepage_background.png)!importan
     </div> 
   </div>
 </div>
-<p class="grey-text " style="font-size: 3rem;text-align: center;line-height: 1.4;"> Contact Us Form to be added here</p>
 <style type="text/css">
 	.row img{
 		height: auto;
@@ -110,15 +100,71 @@ background-image: url(../../static/main/images/homepage_background.png)!importan
 		margin: 2rem 2rem; 
 	}
 	.names{
-		font-size: 24px;
-		font-weight: 500;
+    font-size: 24px;
+    font-weight: 600;
 		margin-left: 3%;
 	}
-	/* @media only screen and (max-width: 700px){
-			.pic{
-				max-width: 56% !important;
-			}
-	} */
+</style>
+<div class="  center form card hoverable" style="width: 45%;margin-left:25%;margin-top:2rem;padding: 1.3rem;">
+  <div class="row">
+    <h3 class="center">Contact Us</h3>
+
+    <div class="col s12 l6 mar">
+      <input type="text" name="" placeholder="Full Name">   
+    </div>
+    <div class="col s12 l12 mar">
+        <input type="Email" name="" placeholder="Email Address">    
+  </div>
+   
+   <div class="input-field col s12 mar">
+          <textarea id="textarea1" class="materialize-textarea" placeholder="Enter Your Message Here"></textarea>
+          
+        </div>   
+  
+  <div class="col s12 l12 ">
+     <a href="#" class="reddishblack-text btn-large white waves-effect link-butn" >Submit</a> 
+  </div>
+  </div>
+  
+</div>
+
+<style type="text/css">  
+  input ,textarea{
+    border:2px solid #000 !important;
+    color: #000;
+    box-sizing: border-box;
+    padding-left: 1px !important;
+
+  }
+textarea{
+  height: 28vh !important;
+}
+     ::value{
+      color: #000;
+      padding: 2rem;
+    }
+  ::placeholder{
+    color:#000;
+    padding-left: 0.7rem; 
+  }
+ .mar{
+  margin-top: 1.4rem;
+ }
+ .link-butn{
+  font-weight: 600; 
+  display: inline-block;
+  margin-top:1rem; 
+  padding:0 2.2rem;
+  border-radius: 0.5rem !important;  
+}
+
+
+@media only screen and (max-width: 700px){
+  .form{
+    width: 100% !important;
+    margin-left: 0% !important;
+  }
+}
 </style>
 <footer class="page-footer deep-purple" style="margin-top: 3rem;">
     <div class="container">
