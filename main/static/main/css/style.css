@@ -6,10 +6,6 @@
  * Made By MaterializeCSS.com
  */
  *,
- @media only screen and (max-width: 425px){
-  .link-button{
-    margin: 0.2rem;
-  }
  *::before,
  *::after{
   margin: 0;
@@ -178,4 +174,8 @@ h5{
   font-weight: 550;
   text-decoration: underline;
 }
+@media only screen and (max-width: 425px){
+  .link-button{
+    margin: 0.2rem;
+  }
   
