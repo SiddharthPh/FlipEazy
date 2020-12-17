@@ -6,7 +6,7 @@
  * Made By MaterializeCSS.com
  */
  *,
- @media only screen and (max-width: 425){
+ @media only screen and (max-width: 425px){
   .link-button{
     margin: 0.2rem;
   }
