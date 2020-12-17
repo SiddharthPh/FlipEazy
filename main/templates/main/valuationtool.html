@@ -174,58 +174,58 @@
  		<script type="text/javascript">
  			
  				// Functions for NEXT Button
- 			function switchToFullName(){
- 				document.querySelector('#fullname').style.display='block';
- 				document.querySelector('#started').style.display='none'; 	
+ 			// function switchToFullName(){
+ 			// 	document.querySelector('#fullname').style.display='block';
+ 			// 	document.querySelector('#started').style.display='none'; 	
 
- 			}
- 			function getCookie(name) {
-    			let cookieValue = null;
-   					 if (document.cookie && document.cookie !== '') {
-        				const cookies = document.cookie.split(';');
-        					for (let i = 0; i < cookies.length; i++) {
-            					const cookie = cookies[i].trim();
-            				// Does this cookie string begin with the name we want?
-            				if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                				cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                			break;
-           	 				}
-       						}
-    				}
-    			return cookieValue;
-				}
-			const csrftoken = getCookie('csrftoken');
+ 			// }
+ 			// function getCookie(name) {
+    		// 	let cookieValue = null;
+   			// 		 if (document.cookie && document.cookie !== '') {
+        	// 			const cookies = document.cookie.split(';');
+        	// 				for (let i = 0; i < cookies.length; i++) {
+            // 					const cookie = cookies[i].trim();
+            // 				// Does this cookie string begin with the name we want?
+            // 				if (cookie.substring(0, name.length + 1) === (name + '=')) {
+            //     				cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+            //     			break;
+           	//  				}
+       		// 				}
+    		// 		}
+    		// 	return cookieValue;
+			// 	}
+			// const csrftoken = getCookie('csrftoken');
  			 			
- 			function switchToUrl(){
-				var name1= document.getElementById("name_text").value
-				document.getElementById("nameh2").innerHTML="Hey ".concat(name1).concat("!")
-				document.querySelector('#url').style.display='block';
- 				document.querySelector('#fullname').style.display='none';				
-			 }
+ 			// function switchToUrl(){
+			// 	var name1= document.getElementById("name_text").value
+			// 	document.getElementById("nameh2").innerHTML="Hey ".concat(name1).concat("!")
+			// 	document.querySelector('#url').style.display='block';
+ 			// 	document.querySelector('#fullname').style.display='none';				
+			//  }
 			 
- 			function switchToMonetary(){
- 				document.querySelector('#monetary').style.display='block';
- 				document.querySelector('#url').style.display='none';
+ 			// function switchToMonetary(){
+ 			// 	document.querySelector('#monetary').style.display='block';
+ 			// 	document.querySelector('#url').style.display='none';
  					
- 			}
+ 			// }
 
- 			function switchToRevenue(){
- 				document.querySelector('#revenue').style.display='block';
- 				document.querySelector('#monetary').style.display='none';
+ 			// function switchToRevenue(){
+ 			// 	document.querySelector('#revenue').style.display='block';
+ 			// 	document.querySelector('#monetary').style.display='none';
  					
- 			}
+ 			// }
  			
- 			function switchToTraffic(){
+ 			// function switchToTraffic(){
 				
- 				document.querySelector('#revenue').style.display='none';
- 				document.querySelector('#expenses').style.display='block';
+ 			// 	document.querySelector('#revenue').style.display='none';
+ 			// 	document.querySelector('#expenses').style.display='block';
  					
- 			}
- 			function switchToEmail(){
+ 			// }
+ 			// function switchToEmail(){
 				
- 				document.querySelector('#email').style.display='block';
-				document.querySelector('#expenses').style.display='none';
-			}
+ 			// 	document.querySelector('#email').style.display='block';
+			// 	document.querySelector('#expenses').style.display='none';
+			// }
 			
 			function switchToOut(){
 				var url=document.getElementById("url").value
@@ -336,7 +336,10 @@
 
  			
 		 </script>
+		   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+
 		 <script type="text/javascript">
+		 
 			var elem = document.querySelector('.sidenav');
 		 var instance = new M.Sidenav(elem);
 	   
