@@ -2,52 +2,45 @@
 <html>
 <head>
 	<title>Sell a Digital Site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" type="text/css" href="../../static/main/css/index.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
   <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	<script type = "text/javascript"src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>             
-      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>  
 </head>
-<body style="background-color: rgba(205,205,205,0.01);">
-	<nav class=" deep-purple" role="navigation">
-    <div class="nav-wrapper container" style="width: 100%;">
-      <a href="{% url 'home' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
-
+<body style="background-color: rgba(205,205,205,0.01);font-family: PT Sans;">
+  <nav class=" deep-purple" role="navigation">
+    <div class="nav-wrapper container"style=" width: 100%; ">
+      <a  href="{% url 'home' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
       <ul class="right hide-on-med-and-down">
-        <!-- <li><a class="white-text" href="index.html">Home</a></li> -->
         <li><a class="white-text" href="{% url 'blog' %}">Blog</a> </li>
         <!-- <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li> -->
         <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
         <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
-        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" data-target="modalid2" style="font-weight: bold;border-radius:0.3rem;" href="{% url 'valuationtool' %}" >Free Valuation Trial</a></li>
+        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" href="{% url 'valuationtool' %}" style="font-weight: bold;border-radius:0.3rem;" >Free Valuation Trial</a></li>
       </ul>
-
       <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="sidenav">
         <li style=" background-color: #312a50;border-radius: 2rem;"><a class="white-text center" href="#" style="font-weight: 500;font-family: Rancho;font-size: 20px;">FlipEazy</a></li>
         <li><a class="center" href="{% url 'home' %}">Home</a></li>
         <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
-        <!-- <li><a class="center" href="{% url 'marketplace' %}">MarketPlace</a></li> -->
+        <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
         <li><a class="center" href="{% url 'login' %}">Login</a></li>
         <li><a class="center" href="{% url 'contact_us' %}">Contact Us</a></li>
         <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Trial</a></li>
       </ul>
-      
     </div>
- </nav>
-    <div class="banner">
+  </nav>
+    <div class="banner" style="background-image: url(../../static/main/images/homepage_background.png);">
     <div class="section no-pad-bot">
       <div class="container">        
         <h1 class="center white-text">Sell a Digital Asset</h1>
         <h6 class="center white-text" style="margin-top: 1rem;">that's already profitable</h6>
         <div style="text-align: center; height: 10rem;">          
-             <a href="{% url 'sellnow' %}" class="reddishblack-text btn-large white  waves-effect link-button" style="font-weight: 600;" >submit</a> 
-              <a href="{% url 'contact_us' %}" class="reddishblack-text btn-large white  waves-effect link-button" style="font-weight: 600;">Contact Us</a>                                 
+             <a href="#" class="reddishblack-text btn-large white  waves-effect link-button" >submit</a> 
+              <a href="{% url 'contact_us' %}" class="reddishblack-text btn-large white  waves-effect link-button">Contact Us</a>                                 
         </div>     
       </div>
     </div>
@@ -105,48 +98,47 @@
         </div>
       </div> 
     </div>
+    <h1 style="font-family: Rancho" class="center">FAQ's</h1>
+
+<div class="container" style="margin-bottom: 3rem;margin-top: 3rem;">
+  <button class="accordion white-text deep-purple"><span>1. How do I sell the website on your Marketplace? </span></button>
+<div class="panel">
+  <p>You can go to our “Sell a site ” page and click on the “Submit” button and once it has gone through our verification process we will list the website without any Listing fee.</p>
+</div>
+
+<button class="accordion white-text deep-purple"><span>2. How Long does it take for you to sell the site?</span></button>
+<div class="panel">
+  <p>We help you attract buyers through our marketing efforts and we expect you to list with us for a minimum period of 3 months. If you are unhappy you can always de-list the website from our marketplace and list it elsewhere.</p>
+</div>
+
+<button class="accordion white-text deep-purple"><span>3. Are there any fees when we sell a site with you ?</span></button>
+<div class="panel"> 
+  <p>There are no upfront fees when you list the website. However, you know that the payment gateway subtracts a fee when we send the funds to you. Hence we charge a 10% success fee.</p>
+</div>
+<button class="accordion  deep-purple"><span> 4. What Information is required from the seller’s side? </span></button>
+<div class="panel"> 
+  <p>In order to speed up the verification process, we require you to fill in all the necessary details in the “Evaluation” form which includes screenshots of income from the actual site’s dashboard as well as the analytics account that is associated with the site.</p>
+</div>
+  
+</div>
 
 
-  
-  
-	<!-- FAQ -->
-	<section>
-		<div class="container" style="margin: 2rem;">
-			<div class="accordion">
-				<div class="accordion-item" id="q1">
-					<a href="#q1" class="accordion-link">1. How do I sell the website on your Marketplace? <i class="material-icons downn">keyboard_arrow_down</i><i class="material-icons upp">keyboard_arrow_up</i></a>
-					<div class="answer">
-						<p>You can go to our “Sell a site ” page and click on the “Submit” button and once it has gone through our verification process we will list the website without any Listing fee. </p>
-					</div>
-					
-				</div>
-				<div class="accordion-item" id="q2">
-					<a href="#q2" class="accordion-link">2. How Long does it take for you to sell the site? <i class="material-icons downn">keyboard_arrow_down</i><i class="material-icons upp">keyboard_arrow_up</i></a>
-					<div class="answer">
-						<p>We help you attract buyers through our marketing efforts and we expect you to list with us for a minimum period of 3 months. If you are unhappy you can always de-list the website from our marketplace and list it elsewhere.</p>
-					</div>
-					
-				</div>
-				<div class="accordion-item" id="q3">
-					<a href="#q3" class="accordion-link">3. Are there any fees when we sell a site with you ? <i class="material-icons downn">keyboard_arrow_down</i><i class="material-icons upp">keyboard_arrow_up</i></a>
-					<div class="answer">
-						<p>There are no upfront fees when you list the website. However, you know that the payment gateway subtracts a fee when we send the funds to you. Hence we charge a 10% success fee.</p>
-					</div>
-					
-				</div>
-				<div class="accordion-item" id="q4">
-					<a href="#q4" class="accordion-link">4. What Information is required from the seller’s side? <i class="material-icons downn">keyboard_arrow_down</i><i class="material-icons upp">keyboard_arrow_up</i></a>
-					<div class="answer">
-						<p>In order to speed up the verification process, we require you to fill in all the necessary details in the “Evaluation” form which includes screenshots of income from the actual site’s dashboard as well as the analytics account that is associated with the site.</p>
-					</div>
-					
-				</div>
-				
-			</div>
-			
-		</div>
-	</section>
-            
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
   <!-- Footer -->
   <footer class="page-footer deep-purple">
     <div class="container">
@@ -185,35 +177,111 @@
     </div>
 
   </footer>
-  <script type="text/javascript">
+  
 
-  </script>
-  <script type="text/javascript">
-    var elem = document.querySelector('.sidenav');
- var instance = new M.Sidenav(elem);
+  <style type="text/css">
+    .banner{
+  width: 100%;
+  height: auto;
+  background-color: #312a50;
+  object-fit: cover;
+  background-image: url(homepage_background.png);
+ }
+ .link-button{
+  font-weight: bold; 
+  display: inline-block;
+  margin:1.5rem; 
+  padding:0 2.2rem;
+  border-radius: 0.5rem !important;  
+}
+.card-content{
+  padding: 1rem 1.5rem;
+  text-align: left;
+}
+.card-head{
+  height: 3rem;
+  background-color: #312a50;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+   padding: 0.3rem;
+   text-align: center;
+}
+span{
+  line-height: 2.3rem;
+  font-weight: 480 ; 
+  font-size: 1.3rem;
+} 
+.shadow{
+  box-shadow: 1px 1px 4px 0px #312a50;
+  border-radius:  0.5rem !important;
+  min-height: 196px;
+}
 
 
+span{
+  margin-top: 2rem;
+}
 
- document.addEventListener('DOMContentLoaded', function() {
-   var elems = document.querySelectorAll('.carousel');
-   var instances = M.Carousel.init(elems, options);
- });
+p {
+  line-height: 2rem;
+  font-size: 18px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.accordion {
+  background-color: #312a50;
+  color: #fff;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
 
- 
- </script>
+.active, .accordion:hover {
+  background-color: #312a50;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #fff;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+  margin-top: 5px;
+  font-size: 1.4rem;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin: 0.3rem;
+  border-radius: 0.4rem;
+  
+  
+}
+
+button{
+  border-radius: 0.3rem;  
+}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
  <script type="text/javascript">
-  var elem = document.querySelector('.sidenav');
-var instance = new M.Sidenav(elem);
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
- var elems = document.querySelectorAll('.carousel');
- var instances = M.Carousel.init(elems, options);
-});
-
-
-</script>
+     var elem = document.querySelector('.sidenav');
+  var instance = new M.Sidenav(elem);
+  </script>
+ 
 
 </body>
+
 </html>

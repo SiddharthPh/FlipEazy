@@ -8,45 +8,41 @@
   <link rel="stylesheet" type="text/css" href="../../static/main/css/index.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: rgba(205,205,205,0.01);">
-<nav class=" deep-purple" role="navigation">
-    <div class="nav-wrapper container" style="width: 100%;">
-      <a href="{% url 'home' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
-
+<body style="background-color: rgba(205,205,205,0.01);font-family: PT Sans;">
+  <nav class=" deep-purple" role="navigation">
+    <div class="nav-wrapper container"style=" width: 100%; ">
+      <a  href="{% url 'home' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
       <ul class="right hide-on-med-and-down">
-        <!-- <li><a class="white-text" href="index.html">Home</a></li> -->
         <li><a class="white-text" href="{% url 'blog' %}">Blog</a> </li>
         <!-- <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li> -->
         <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
         <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
-        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" data-target="modalid2" style="font-weight: bold;border-radius:0.3rem;" href="{% url 'valuationtool' %}" >Free Valuation Trial</a></li>
+        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" href="{% url 'valuationtool' %}" style="font-weight: bold;border-radius:0.3rem;" >Free Valuation Trial</a></li>
       </ul>
-
       <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="sidenav">
         <li style=" background-color: #312a50;border-radius: 2rem;"><a class="white-text center" href="#" style="font-weight: 500;font-family: Rancho;font-size: 20px;">FlipEazy</a></li>
         <li><a class="center" href="{% url 'home' %}">Home</a></li>
         <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
-        <!-- <li><a class="center" href="{% url 'marketplace' %}">MarketPlace</a></li> -->
+        <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
         <li><a class="center" href="{% url 'login' %}">Login</a></li>
         <li><a class="center" href="{% url 'contact_us' %}">Contact Us</a></li>
         <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Trial</a></li>
       </ul>
-      
     </div>
- </nav>
-  <div class="banner">
+  </nav>
+  <div class="banner" style="background-image: url(../../static/main/images/homepage_background.png);">
     <div class="section no-pad-bot">
       <div class="container">        
         <h1 class="center white-text">Buy a Digital Asset</h1>
         <h6 class="center white-text" style="margin-top: 1rem;">that's already profitable</h6>
         <div style="text-align: center; height: 10rem;">          
-             <a href="#" class="reddishblack-text btn-large white  waves-effect link-button" style="font-weight: 600;" >Marketplace</a> 
-              <a href="{% url 'contact_us' %}" class="reddishblack-text btn-large white  waves-effect link-button" style="font-weight: 600;">Contact Us</a>                                 
+             <a href="#" class="reddishblack-text btn-large white  waves-effect link-button" >Marketplace</a> 
+              <a href="{% url 'contact_us' %}" class="reddishblack-text btn-large white  waves-effect link-button">Contact Us</a>                                 
         </div>     
       </div>
     </div>
@@ -102,57 +98,40 @@
 	      </div>
 	    </div> 
     </div>
+    
 	<!-- FAQ -->
-	<section>
-		<div class="container">
-			<div class="accordion">
-				<div class="accordion-item" id="q1">
-					<a href="#q1" class="accordion-link">1. How do I buy a site from your marketplace?<i class="material-icons downn">keyboard_arrow_down</i><i class="material-icons upp">keyboard_arrow_up</i></a>
-					<div class="answer">
-						<p>You can navigate our “Buy site” page and click on “View Marketplace” where all the websites are listed with the necessary details. Once you find the listing click on the buy button and follow the checkout process.  You can make your payment through credit card or wire transfers are also acceptable.</p>
-					</div>
-					
-				</div>
-				<div class="accordion-item" id="q2">
-					<a href="#q2" class="accordion-link">2. How do we value a business? <i class="material-icons downn">keyboard_arrow_down</i><i class="material-icons upp">keyboard_arrow_up</i></a>
-					<div class="answer">
-						<p>Valuation = Earnings * Multiple.
+	<h1 style="font-family: Rancho" class="center">FAQ's</h1>
+<div class="container" style="margin-bottom: 3rem;margin-top: 3rem;">
+	<button class="accordion white-text deep-purple"><span>1. How do I buy a site from your marketplace?</span></button>
+	<div class="panel">
+	  <p>You can navigate our “Buy site” page and click on “View Marketplace” where all the websites are listed with the necessary details. Once you find the listing click on the buy button and follow the checkout process.  You can make your payment through credit card or wire transfers are also acceptable.</p>
+	</div>
+	  <button class="accordion white-text deep-purple"><span>2. How do we value a business?</span></button>
+	<div class="panel">
+	  <p>YValuation = Earnings * Multiple.
 
-We consider the earnings or the profits of the business and multiply it with the “Multiple”.  We actually follow a rigorous verification process and consider various factors before arriving at the Multiple. Multiple can range anywhere between 20x-40x depending on certain factors.
+	We consider the earnings or the profits of the business and multiply it with the “Multiple”.  We actually follow a rigorous verification process and consider various factors before arriving at the Multiple. Multiple can range anywhere between 20x-40x depending on certain factors.
 
-For Example:
+	For Example:
 
-Let us say a content-based website is making $2400 per year. We take an average of 12 months which is $200 per month. We multiply it with say (25x for example) so the total value of the business is $5000
-</p>
-					</div>
-					
-				</div>
-				<div class="accordion-item" id="q3">
-					<a href="#q3" class="accordion-link">3. Who handles the Migration Process? <i class="material-icons downn">keyboard_arrow_down</i><i class="material-icons upp">keyboard_arrow_up</i></a>
-					<div class="answer">
-						<p>We consider ourselves as a Done-for-you service, so we handle everything right from verification to Migration. You will not have to worry about it. </p>
-					</div>
-					
-				</div>
-				<div class="accordion-item" id="q4">
-					<a href="#q4" class="accordion-link">4. Can I resell the same business which I bought earlier in your marketplace? <i class="material-icons downn">keyboard_arrow_down</i><i class="material-icons upp">keyboard_arrow_up</i></a>
-					<div class="answer">
-						<p>Of-course we do not have any such restrictions, However, the website will have to go through the same verification process, and only if it passes our requirements, we list the website.</p>
-					</div>
-					
-				</div>
-				<div class="accordion-item" id="q5">
-					<a href="#q5" class="accordion-link">5. How long does the transfer process take? <i class="material-icons downn">keyboard_arrow_down</i><i class="material-icons upp">keyboard_arrow_up</i></a>
-					<div class="answer">
-						<p>Once we get a confirmation from your end, the transfer process usually takes 7-10 business days depending on the registrar, where the domain is being transferred from and where it is being transferred to.</p>
-					</div>
-					
-				</div>
-				
-			</div>
-			
-		</div>
-	</section>
+	Let us say a content-based website is making $2400 per year. We take an average of 12 months which is $200 per month. We multiply it with say (25x for example) so the total value of the business is $5000</p>
+	</div>
+
+	<button class="accordion white-text deep-purple"><span>3. Who handles the Migration Process?</span></button>
+	<div class="panel">
+	  <p>We consider ourselves as a Done-for-you service, so we handle everything right from verification to Migration. You will not have to worry about it.</p>
+	</div>
+
+	<button class="accordion white-text deep-purple"><span>4. Can I resell the same business which I bought earlier in your marketplace?</span></button>
+	<div class="panel"> 
+	  <p>Of-course we do not have any such restrictions, However, the website will have to go through the same verification process, and only if it passes our requirements, we list the website.</p>
+	</div>
+	<button class="accordion  deep-purple"><span> 5. How long does the transfer process take? </button>
+	<div class="panel"> 
+	  <p>Once we get a confirmation from your end, the transfer process usually takes 7-10 business days depending on the registrar, where the domain is being transferred from and where it is being transferred to.</p>
+	</div>
+  
+</div>
   <!-- Footer -->
   <footer class="page-footer deep-purple">
     <div class="container">
@@ -191,18 +170,124 @@ Let us say a content-based website is making $2400 per year. We take an average 
     </div>
 
   </footer>
-  <script type="text/javascript">
-	var elem = document.querySelector('.sidenav');
- var instance = new M.Sidenav(elem);
+  <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+  <style type="text/css">
+    .banner{
+  width: 100%;
+  height: auto;
+  background-color: #312a50;
+  object-fit: cover;
+  background-image: url(homepage_background.png);
+ }
+ .link-button{
+  font-weight: bold; 
+  display: inline-block;
+  margin:1.5rem; 
+  padding:0 2.2rem;
+  border-radius: 0.5rem !important;  
+}
+.card-content{
+  padding: 1rem 1.5rem;
+  text-align: left;
+}
+.card-head{
+  height: 3rem;
+  background-color: #312a50;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+   padding: 0.3rem;
+   text-align: center;
+}
+span{
+  line-height: 2.3rem;
+  font-weight: 480 ; 
+  font-size: 1.3rem;
+} 
+.shadow{
+  box-shadow: 1px 1px 4px 0px #312a50;
+  border-radius:  0.5rem !important;
+  min-height: 196px;
+}
 
 
+span{
+  margin-top: 2rem;
+}
 
- document.addEventListener('DOMContentLoaded', function() {
-   var elems = document.querySelectorAll('.carousel');
-   var instances = M.Carousel.init(elems, options);
- });
+p {
+  line-height: 2rem;
+  font-size: 18px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.accordion {
+  background-color: #312a50;
+  color: #fff;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
 
+.active, .accordion:hover {
+  background-color: #312a50;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #fff;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+  margin-top: 5px;
+  font-size: 1.4rem;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin: 0.3rem;
+  border-radius: 0.4rem;
+  
+  
+}
+
+button{
+  border-radius: 0.3rem;  
+}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+ <script type="text/javascript">
+     var elem = document.querySelector('.sidenav');
+  var instance = new M.Sidenav(elem);
+  </script>
  
- </script>
+
 </body>
 </html>
