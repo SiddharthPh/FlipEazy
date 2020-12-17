@@ -191,5 +191,18 @@ Let us say a content-based website is making $2400 per year. We take an average 
     </div>
 
   </footer>
+  <script type="text/javascript">
+	var elem = document.querySelector('.sidenav');
+ var instance = new M.Sidenav(elem);
+
+
+
+ document.addEventListener('DOMContentLoaded', function() {
+   var elems = document.querySelectorAll('.carousel');
+   var instances = M.Carousel.init(elems, options);
+ });
+
+ 
+ </script>
 </body>
 </html>

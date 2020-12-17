@@ -156,7 +156,7 @@
       <div class="col s12 m12 l4">
           <div class="card hoverable">
           <div class="card-image">
-             <img src="../../static/main/images/Lev content.jpg"  ontouchstart="dp1()"    width="100%">
+             <img src="../../static/main/images/Lev content.jpg"  id="0" onmouseover="dp(this.id)" ontouchstart="dp(this.id)" ontouchend="hd(this.id)" onmouseout="hd(this.id)"    width="100%">
               <a href="{% url 'leverage' %}"class="btn-floating halfway-fab waves-effect waves-light red card-icon"><i class="material-icons large ">chrome_reader_mode</i></a>
           </div>
           <div class="card-content">
@@ -173,7 +173,7 @@
           <div class="card hoverable">
 
           <div class="card-image">
-             <img src="../../static/main/images/blog1_thumb.jpg"  ontouchstart="dp2()"  width="100%">
+             <img src="../../static/main/images/blog1_thumb.jpg"  id="1" onmouseover="dp(this.id)" ontouchstart="dp(this.id)" ontouchend="hd(this.id)" onmouseout="hd(this.id)"  width="100%">
               <a href="{% url 'onlinebusiness' %}" class="btn-floating halfway-fab waves-effect waves-light red card-icon"><i class="material-icons large">chrome_reader_mode</i></a>
           </div>
           <div class="card-content">
@@ -189,7 +189,7 @@
           <div class="card hoverable">
 
           <div class="card-image">
-             <img src="../../static/main/images/MARK.jpg"  ontouchstart="dp3()"  width="100%">
+             <img src="../../static/main/images/MARK.jpg"  id="2" onmouseover="dp(this.id)" ontouchstart="dp(this.id)" ontouchend="hd(this.id)" onmouseout="hd(this.id)"  width="100%">
               <a href="{% url 'whymarketplace' %}" class="btn-floating halfway-fab waves-effect waves-light red card-icon"><i class="material-icons large ">chrome_reader_mode</i></a>
           </div>
           <div class="card-content">
@@ -202,51 +202,56 @@
       </div>
       </div>
 </div>
+
 <script type="text/javascript">
-    
-  function myFunction(x) 
+
+  var elem = document.querySelector('.sidenav');
+var instance = new M.Sidenav(elem);
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+ var elems = document.querySelectorAll('.carousel');
+ var instances = M.Carousel.init(elems, options);
+});
+function myFunction(x) 
   {
              if (x.matches)
-              { // If media query matches
- 
- 
-             
-            
+              { // If media query matches  
+                  document.querySelector("#blogs").style.display="none";
+                  document.querySelector("#mob-blog").style.display="block";
                  for(var i=0;i<ele.length;i++)
                  {
                      ele[i].style.display="none";
                      eles[i].style.display="none";
                      ic[i].style.display="none"
-                 }
-                   
-         
- }    
+                 }                            
+              }    
+              else
+              {
+                  document.querySelector("#blogs").style.display="block";
+                  document.querySelector("#mob-blog").style.display="none";
               }
- function dp1()
-         {
-           ele[0].style.display="block";
-           eles[0].style.display="block";
-           ic[0].style.display="block";                                 
-         }
- function dp2()
-         {
-           ele[1].style.display="block";
-           eles[1].style.display="block";
-           ic[1].style.display="block";                                 
-         }
- function dp3()
-         {
-           ele[2].style.display="block";
-           eles[2].style.display="block";
-           ic[2].style.display="block";                                 
-         }
-var ele=document.getElementsByClassName("card-content");
-var eles=document.getElementsByClassName("card-action");
+    }
+function dp(id){
+  ele[id].style.display="block";
+  eles[id].style.display="block";
+  ic[id].style.display="block";   
+}
+function hd(id){
+   ele[id].style.display="none";
+  eles[id].style.display="none";
+  ic[id].style.display="none";  
+}
+var ele=document.getElementsByClassName("mcard-content");
+var eles=document.getElementsByClassName("mcard-action");
 var ic=document.getElementsByClassName("card-icon");
 
-var x = window.matchMedia("(max-width: 900px)")
+var x = window.matchMedia("(max-width: 950px)")
 myFunction(x) // Call listener function at run time
 x.addListener(myFunction)
+
+
 
 </script>
   <footer class="page-footer deep-purple">
