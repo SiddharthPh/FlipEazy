@@ -10,7 +10,7 @@
   <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
 </head>
 <body style="background-color: rgba(205,205,205,0.01);font-family: PT Sans;">
   <nav class=" deep-purple" role="navigation">
@@ -19,9 +19,14 @@
       <ul class="right hide-on-med-and-down">
         <li><a class="white-text" href="{% url 'blog' %}">Blog</a> </li>
         <!-- <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li> -->
+        {% if user.is_authenticated %}
+        <li><a class="white-text" href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
         <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+        <li><a class="white-text" href="{% url 'about_us' %}">About Us</a></li>
         <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
-        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" href="{% url 'valuationtool' %}" style="font-weight: bold;border-radius:0.3rem;" >Free Valuation Trial</a></li>
+        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" href="{% url 'valuationtool' %}" style="font-weight: bold;border-radius:0.3rem;" >Free Valuation Tool</a></li>
       </ul>
 
       <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -30,9 +35,14 @@
         <li><a class="center" href="{% url 'home' %}">Home</a></li>
         <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
         <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
-        <li><a class="center" href="{% url 'login' %}">Login</a></li>
-        <li><a class="center" href="{% url 'contact_us' %}">Contact Us</a></li>
-        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Trial</a></li>
+        {% if user.is_authenticated %}
+        <li><a class="white-text" href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+        <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+        <li><a class="center" href="{% url 'about_us' %}">About Us</a></li>
+        <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
+        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Tool</a></li>
       </ul>
     </div>
   </nav>
@@ -194,43 +204,46 @@
           </div>
   </div>
 
-  <footer class="page-footer deep-purple">
-    <div class="container">
+  <footer class="page-footer deep-purple" >
+    <div class="">
       <div class="row">
-        <div class="col l6 s12">
+        <div class="col l1"></div>
+        <div class="col l4 s12">
           <h5 class="white-text">Company Bio</h5>
           <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
+        <div class="col l1"></div>
+        <div class="col l4 s12">
+          <form action="{% url 'newsletter' %}" method="POST">
+            {% csrf_token %}
+          <div class="card hoverable" style="padding: 2rem 1rem;background-color: #312a50;">
+            <h6 style="font-size: 1.6rem;">Subscribe to Our Newsletter</h6>
+            <div class="input-field ">
+              <i class="material-icons prefix">mail</i>
+              <input id="subs" type="text" class="validate">
+              <label for="subs">Enter Your Email Address</label>
+            </div>
+          </div>
+        </form>
         </div>
       </div>
     </div>
+    <div class="container">
+          
+      <ul style="display: flex;justify-content: center;">
+          <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/google-logo.png"/></a></li>
+          <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/facebook-new.png"/></a></li>
+          <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/linkedin.png"/></a></li>        
+      </ul>
+        </div>
     <div class="footer-copyright">
       <div class="container">
         <h6 class="center">All the copyrights are reserved by FlipEazy</h6>
       
       </div>
     </div>
-
   </footer>
+  
  
 <style type="text/css">
   

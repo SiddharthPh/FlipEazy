@@ -2,7 +2,10 @@ from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRe
 # from main.forms import toolform
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .models import tool
+from django.contrib.auth import logout as django_logout
+from .models import *
+from django.contrib.auth.decorators import login_required
+
 import json
 # Create your views here.
 # Testing
@@ -15,7 +18,9 @@ def marketplace(request):
 def blog(request):
     return render(request, 'main/blog.html')
 def contact_us(request):
-    return  render(request,'main/aboutus.html')
+    return  render(request,'main/contact_us.html')
+def about_us(request):
+    return render(request,'main/aboutus.html')
 def buysite(request):
     return render(request,'main/buy_site.html')
 def sellsite(request):
@@ -72,11 +77,12 @@ def data_submit(request):
         data=request.body
         data=data.decode("utf-8") 
         data=json.loads(data)
-        tool.objects.create(
+        tools=tool.objects.create(
             name=data['name'],
             url=data['url'],
             email=data['email']
         )
+        tools.save()
         # tool_obj=tool(name=name1)
         # tool_obj.name=name1
         # tool_obj.save()
@@ -102,4 +108,21 @@ def sell_now(request):
 #         tool_obj.save()
 #         return HttpResponseRedirect(reverse('home'))
 
-            
+def contactus_form(request):
+    if request.method=='POST':
+        name=request.POST.get['name']
+        email=request.POST.get['email']
+        message=request.POST.get['message']
+        contactus_form_obj=contactus_form.objects.create(name=name,email=email,message=message)
+        contactus_form_obj.save()
+
+def newsletter(request):
+    if request.method=='POST':
+        email=request.POST.get['email']
+        news_obj=newsletter.objects.create(email=email)
+        news_obj.save()
+
+@login_required
+def logout(request):
+    django_logout(request)
+    return redirect('home')
