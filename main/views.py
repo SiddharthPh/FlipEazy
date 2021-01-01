@@ -110,17 +110,17 @@ def sell_now(request):
 #         tool_obj.save()
 #         return HttpResponseRedirect(reverse('home'))
 
-def contactus_form(request):
+def contactus_form_view(request):
     if request.method=='POST':
-        name=request.POST.get['name']
-        email=request.POST.get['email']
-        message=request.POST.get['message']
+        name=request.POST['name']
+        email=request.POST['email']
+        message=request.POST['message']
         contactus_form_obj=contactus_form.objects.create(name=name,email=email,message=message)
         contactus_form_obj.save()
 
-def newsletter(request):
+def newsletter_view(request):
     if request.method=='POST':
-        email=request.POST.get['email']
+        email=request.POST['email']
         news_obj=newsletter.objects.create(email=email)
         news_obj.save()
 
