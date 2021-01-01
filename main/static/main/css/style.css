@@ -5,6 +5,14 @@
  *
  * Made By MaterializeCSS.com
  */
+  html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
  @media only screen and (max-width: 425px){
   .link-button{
     margin: 0.2rem;
