@@ -7,12 +7,28 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../../static/main/css/preloader.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
   
 
 </head>
-<body style="background-color: #312a50;">
+<body style="background-color: #312a50;" onload="fun()">
+	<div class="page-loader">
+    <div class="container">
+   
+      <div class="loader"></div> 
+    </div>
+</div>
+  <script type="text/javascript">
+    function fun(){
+    document.querySelector(".page-loader").style.display="none";
+  }
+
+     $(window).load(function(){
+                $('.page-loader').fadeOut();                                                                        
+            });
+  </script>
 	<nav class=" deep-purple" role="navigation">
     	<div class="nav-wrapper container"style=" width: 100%; ">
 			<a  href="{% url 'home' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
@@ -36,16 +52,17 @@
         <li style=" background-color: #312a50;border-radius: 2rem;"><a class="white-text center" href="#" style="font-weight: 500;font-family: Rancho;font-size: 20px;">FlipEazy</a></li>
         <li><a class="center" href="{% url 'home' %}">Home</a></li>
         <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
+        <li><a class="center" href="{% url 'about_us' %}">About Us</a></li>
+		<li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
+
+        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Tool</a></li>
         <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
 		{% if user.is_authenticated %}
         <li><a class="white-text" href="{% url 'logout' %}">Logout</a></li>
         {% else %}
         <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
         {% endif %}
-        <li><a class="center" href="{% url 'about_us' %}">About Us</a></li>
-		<li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
 
-        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Tool</a></li>
 	  </ul>
 	</div>
     </nav>
@@ -107,79 +124,52 @@
 			
  		</div>
 	 </div> -->
-	 
-	 <div class="container card center hoverable " style="width: 45%;margin-left:26rem;margin-top:2rem;padding: 1.3rem;background-color: #312d50;">
-		<div class="row">
-		  <h3 class="center white-text">Valuation Form</h3>
-		  <div class="col s12 l12 mar" >
-			  <input  type="text" id="url" name="" placeholder="URL(www.example.com)">    
-		  </div>
-	  
-		  <div class="col s12 l6 mar">
-			<input type="text" id="first_name" name="" placeholder="First Name">   
-		  </div>
-		  <div class="col s12 l6 mar">
-			<input type="text" id="last_name" name="" placeholder="Last Name">   
-		  </div>
-		  <div class="col s12 l12 mar">
-			  <input type="Email" id="email_add" name="" placeholder="Email Address">    
-		</div>
-		<!-- <div class="col s2 l2 mar">
-		  <input class="center" id="pnumber" name="" value="+91">
-		</div>  
-		<div class="col s10 l10 mar">
-			  <input  name="" placeholder="Phone Number">    
-		</div>    -->
-		<div class="col s12 l12 mar">
-			  <input type="text" id="annual_revenue" name="" placeholder="Monthly Revenue">    
-		</div>     
-		  <div class="col s12 l12 mar">
-			  <input type="text" id="annual_profit" name="" placeholder="Monthly Profit">    
-		</div> 
-		<div class="col s12 l12 mar">
-			<input type="text" id="traffic_month" name="" placeholder="Traffic per month(Over past 6months)">    
-	  </div> 
-		<div class="col s12 l12">
-		   <a href="{% url 'data_submit'%}" class="reddishblack-text btn-large white  waves-effect link-butn" onclick="switchToOut()" >Submit</a> 
-		</div>
-		</div>
-		
-	  </div>
-	</body>
-	<style type="text/css">
-	  input{
-		border:2px solid #fff !important;
-		color: #fff;
-		box-sizing: border-box;
-		padding-left: 1px !important;
-	
-	  }
-	
-		 ::value{
-		  color: #fff;
-		  padding: 2em;
-		}
-	  ::placeholder{
-		color:#fff;
-		padding-left: 1rem; 
-	  }
-	 .mar{
-	  margin-top: 1.4rem;
-	 }
-	 .link-butn{
-	  font-weight: bold; 
-	  display: inline-block;
-	  margin-top:1rem; 
-	  padding:0 2.2rem;
-	  border-radius: 0.5rem !important
-	}
-	@media only screen and (max-width: 700px){
-  .form{
-    width: 100% !important;
-    margin-left: 0% !important;
-  }
-}
-	</style>
+<div class="container row" style="margin-top: 2rem;">
+
+  <div class="card col l8 offset-l2  m8 offset-m2 s12" style="padding:1.2rem;background-color: rgb(243, 244, 245);">
+    <h4 class="center" style="font-weight: 600;">Valuation Form (100% confidential)</h4>
+    <hr style="width: 40%;margin: auto ; border-color:#00c4b5;">
+      <div class="card" style="padding: 1.2rem;margin-top: 1.9rem;">
+        <div class="row">          
+          <div class="input-field col s12">
+            <i class="material-icons prefix">link</i>
+            <input id="url" type="text" class="validate">
+            <label for="url">Enter Your URL here</label>
+          </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">account_box</i>
+            <input id="first_name" type="text" class="validate">
+            <label for="first_name">Full Name</label>
+          </div>
+          
+          <div class="input-field col s12">
+            <i class="material-icons prefix">email</i>
+            <input id="email_add" type="text" class="validate">
+            <label for="email">Email Address</label>
+          </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">attach_money</i>
+            <input id="revenue" type="text" class="validate">
+            <label for="revenue">Monthly Revenue in $</label>
+          </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">import_export</i>
+            <input id="profit" type="text" class="validate">
+            <label for="profit">Monthly Profit in  $</label>
+          </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">http</i>
+            <input id="traffic" type="text" class="validate">
+            <label for="traffic">Monthly Traffic (Over past 6 months)</label>
+          </div>          
+        <div class="col s12 l7 ">
+           <a href="#" class="white-text btn-large waves-effect deep-purple right" style="border-radius: 0.5rem;font-weight: 600;" >Submit</a> 
+        </div>
+      </div>
+    </div>  
+  </div>  
+</div>
+</body>
 
  		
 
@@ -355,12 +345,6 @@
 			var elem = document.querySelector('.sidenav');
 		 var instance = new M.Sidenav(elem);
 	   
-	   
-	   
-		 document.addEventListener('DOMContentLoaded', function() {
-		   var elems = document.querySelectorAll('.carousel');
-		   var instances = M.Carousel.init(elems, options);
-		 });
 	   
 		 
 		 </script>

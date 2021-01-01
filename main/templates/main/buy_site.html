@@ -10,9 +10,25 @@
   <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
   <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../../static/main/css/preloader.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: rgba(205,205,205,0.01);font-family: PT Sans;">
+<body style="background-color: rgba(205,205,205,0.01);font-family: PT Sans;" onload="fun()">
+  <div class="page-loader">
+    <div class="container">
+   
+      <div class="loader"></div> 
+    </div>
+</div>
+  <script type="text/javascript">
+    function fun(){
+    document.querySelector(".page-loader").style.display="none";
+  }
+
+     $(window).load(function(){
+                $('.page-loader').fadeOut();                                                                        
+            });
+  </script>
   <nav class=" deep-purple" role="navigation">
     <div class="nav-wrapper container"style=" width: 100%; ">
       <a  href="{% url 'home' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
@@ -33,15 +49,16 @@
         <li style=" background-color: #312a50;border-radius: 2rem;"><a class="white-text center" href="#" style="font-weight: 500;font-family: Rancho;font-size: 20px;">FlipEazy</a></li>
         <li><a class="center" href="{% url 'home' %}">Home</a></li>
         <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
+        <li><a class="center" href="{% url 'about_us' %}">About Us</a></li>
+        <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
+        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Tool</a></li>
         <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
         {% if user.is_authenticated %}
         <li><a class="white-text" href="{% url 'logout' %}">Logout</a></li>
         {% else %}
         <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
         {% endif %}
-        <li><a class="center" href="{% url 'about_us' %}">About Us</a></li>
-        <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
-        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Tool</a></li>
+        
       </ul>
     </div>
   </nav>
@@ -299,6 +316,25 @@ button{
  <script type="text/javascript">
      var elem = document.querySelector('.sidenav');
   var instance = new M.Sidenav(elem);
+
+     var cards=document.getElementsByClassName("card");
+             heights=Array();
+             for (i=0;i<cards.length;i++)
+             {
+               heights[i]=getComputedStyle(cards[i]).height;    
+            }
+            var max=heights[0];
+           for (i=0;i<heights.length;i++)
+            {
+             if(max<heights[i])
+             {
+               max=heights[i];
+             }
+           }
+           for (i=0;i<heights.length;i++)
+           {
+             cards[i].style.height=max;
+           }
   </script>
  
 

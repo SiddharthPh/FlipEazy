@@ -3,16 +3,32 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>AboutUs</title>
+  <title>About Us</title>
 
   <!-- CSS  -->
+  <link href="../../static/main/css/preloader.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: rgba(205,205,205,0.01);font-family: PT Sans;">
+<body style="background-color: rgba(205,205,205,0.01);font-family: PT Sans;" onload="fun()">
+    <div class="page-loader">
+    <div class="container">
+   
+      <div class="loader"></div> 
+    </div>
+  </div>
+    <script type="text/javascript">
+    function fun(){
+    document.querySelector(".page-loader").style.display="none";
+  }
+
+     $(window).load(function(){
+                $('.page-loader').fadeOut();                                                                        
+            });
+  </script>
   <!-- Navbar -->
    <nav class=" deep-purple" role="navigation">
     <div class="nav-wrapper container" style="width: 100%;">
@@ -37,28 +53,20 @@
         <li style=" background-color: #312a50;border-radius: 2rem;"><a class="white-text center" href="#" style="font-weight: 500;font-family: Rancho;font-size: 20px;">FlipEazy</a></li>
         <li><a class="center" href="{% url 'home' %}">Home</a></li>
         <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
+        <li><a class="center" href="{% url 'about_us' %}">About Us</a></li>
+        <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
+        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Tool</a></li>
         <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
         {% if user.is_authenticated %}
         <li><a class="white-text" href="{% url 'logout' %}">Logout</a></li>
         {% else %}
         <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
-        {% endif %}
-        <li><a class="center" href="{% url 'about_us' %}">About Us</a></li>
-        <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
-        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Tool</a></li>
+        {% endif %}        
       </ul>
       
     </div>
   </nav>
-  <style>
-    .link-button{
-  font-weight: bold; 
-  display: inline-block;
-  margin:1.5rem; 
-  padding:0 2.2rem;
-  border-radius: 0.5rem !important;  
-}
-  </style>
+
   <!-- Navbar -->
     <!-- Banner -->
     <div class="banner" style="background-image: url(../../static/main/images/homepage_background.png);  background-color: #312a50;">
@@ -66,8 +74,8 @@
       <div class="container">        
         <h1 class="center white-text" style="font-family: 'Pridi', serif;margin-bottom: 6%;">About Us </h1>                
         <div style="text-align: center; height: 10rem;">          
-             <a href="{% url 'buysite' %}" class="reddishblack-text btn-large white  waves-effect link-button" style="font-weight: 600;">Buy a Site</a> 
-              <a href="{% url 'sellsite' %}" class="reddishblack-text btn-large white  waves-effect link-button" style="font-weight: 600;">Sell a Site</a>                                 
+             <a href="{% url 'buysite' %}" class="reddishblack-text btn-large white  waves-effect link-button">Buy a Site</a> 
+              <a href="{% url 'sellsite' %}" class="reddishblack-text btn-large white  waves-effect link-button">Sell a Site</a>                                 
         </div>     
       </div>
     </div>
@@ -83,16 +91,19 @@
       <p class="content">
       We have an efficient process setup right from vetting the website, doing our due diligence to listing the website on the marketplace. We assure you of the quality and at the same time we charge a fixed 10% commission, which is pretty low when compared to our competitors.
       </p>
-  </div>
-  
+  </div>  
 </div>
-<div style="margin-bottom: 4em;">
+<div style="width: 90%;margin: auto;">  
+  <div class="card" style="padding: 1.5rem;background-color: rgb(243, 244, 245);">
+    <h3 style="font-weight: 650;" class="">Co-Founders</h3>
+        <hr style="width: 20%; border-color:#00c4b5;">
+    <div style="margin-bottom: 4em;">
   <h2 style="text-align: center;font-weight: 500;margin-top: 50px;">Team Lead</h2>
   <div class="row ">
     <div class="col offset-m4 " style="text-align: center;">
-      <img src="../../static/main/images/vivek.jpeg" style="max-width: 55%;">
-      <p class="names ">Vivek Bhat</p><br>         
-  </div>    
+        <img src="../../static/main/images/vivek.jpeg" style="max-width: 55%;">
+        <p class="names ">Vivek Bhat</p><br>         
+    </div>    
   </div>
   <h2 style="text-align: center;font-weight: 500;">Web Development</h2>
   <div class="row" style="margin: auto;text-align: center;">
@@ -111,6 +122,7 @@
     </div> 
   </div>
 </div>
+
 <style type="text/css">
 	.row img{
 		height: auto;
@@ -124,108 +136,6 @@
 		margin-left: 3%;
 	}
 </style>
-<!-- <div class="  center form card hoverable" style="width: 45%;margin-left:25%;margin-top:2rem;padding: 1.3rem;">
-  <div class="row">
-    <h3 class="center">Contact Us</h3>
-
-    <div class="col s12 l6 mar">
-      <input type="text" name="" placeholder="Full Name">   
-    </div>
-    <div class="col s12 l12 mar">
-        <input type="Email" name="" placeholder="Email Address">    
-  </div>
-   
-   <div class="input-field col s12 mar">
-          <textarea id="textarea1" class="materialize-textarea" placeholder="Enter Your Message Here"></textarea>
-          
-        </div>   
-  
-  <div class="col s12 l12 ">
-     <a href="#" class="reddishblack-text btn-large white waves-effect link-butn" >Submit</a> 
-  </div>
-  </div>
-  
-</div> -->
-
-<style type="text/css">  
-  input ,textarea{
-    border:2px solid #000 !important;
-    color: #000;
-    box-sizing: border-box;
-    padding-left: 1px !important;
-
-  }
-textarea{
-  height: 28vh !important;
-}
-     ::value{
-      color: #000;
-      padding: 2rem;
-    }
-  ::placeholder{
-    color:#000;
-    padding-left: 0.7rem; 
-  }
- .mar{
-  margin-top: 1.4rem;
- }
- .link-butn{
-  font-weight: 600; 
-  display: inline-block;
-  margin-top:1rem; 
-  padding:0 2.2rem;
-  border-radius: 0.5rem !important;  
-}
-
-
-@media only screen and (max-width: 700px){
-  .form{
-    width: 100% !important;
-    margin-left: 0% !important;
-  }
-}
-</style>
-<footer class="page-footer deep-purple" >
-  <div class="">
-    <div class="row">
-      <div class="col l1"></div>
-      <div class="col l4 s12">
-        <h5 class="white-text">Company Bio</h5>
-        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-      </div>
-      <div class="col l1"></div>
-      <div class="col l4 s12">
-        <form action="{% url 'newsletter' %}" method="POST">
-          {% csrf_token %}
-        <div class="card hoverable" style="padding: 2rem 1rem;background-color: #312a50;">
-          <h6 style="font-size: 1.6rem;">Subscribe to Our Newsletter</h6>
-          <div class="input-field ">
-            <i class="material-icons prefix">mail</i>
-            <input id="subs" type="text" class="validate">
-            <label for="subs">Enter Your Email Address</label>
-          </div>
-        </div>
-      </form>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-        
-    <ul style="display: flex;justify-content: center;">
-        <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/google-logo.png"/></a></li>
-        <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/facebook-new.png"/></a></li>
-        <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/linkedin.png"/></a></li>        
-    </ul>
-      </div>
-  <div class="footer-copyright">
-    <div class="container">
-      <h6 class="center">All the copyrights are reserved by FlipEazy</h6>
-    
-    </div>
-  </div>
-</footer>
-
-
 
 
   <style type="text/css">
@@ -240,8 +150,7 @@ textarea{
     }
     .content{
       text-indent: 9rem;
-      font-weight: 480;
-      font-size: 2rem;
+      font-weight: 480;      
       line-height: 1.6;
     }
     .mail{
@@ -257,7 +166,47 @@ textarea{
       overflow-wrap: break-word;
       padding: 0 16px;
     }
+    @media only screen and (min-width:640px){
+      .content{
+        font-size: 1.7rem;
+      }
+    }
   </style>
+ <footer class="page-footer deep-purple" >
+    <div class="">
+      <div class="row">
+        <div class="col l1"></div>
+        <div class="col l4 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+        </div>
+        <div class="col l1"></div>
+        <div class="col l4 s12">
+          <div class="card hoverable" style="padding: 2rem 1rem;background-color: #312a50;">
+            <h6 style="font-size: 1.6rem;">Subscribe to Our Newsletter</h6>
+            <div class="input-field ">
+              <i class="material-icons prefix">mail</i>
+              <input id="subs" type="text" class="validate">
+              <label for="subs">Enter Your Email Address</label>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">          
+      <ul style="display: flex;justify-content: center;">
+          <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/google-logo.png"/></a></li>
+          <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/facebook-new.png"/></a></li>
+          <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/linkedin.png"/></a></li>        
+      </ul>
+        </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <h6 class="center">All the copyrights are reserved by FlipEazy</h6>
+      
+      </div>
+    </div>
+  </footer>
   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
  <script type="text/javascript">
