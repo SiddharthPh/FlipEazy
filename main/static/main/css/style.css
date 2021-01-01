@@ -5,6 +5,11 @@
  *
  * Made By MaterializeCSS.com
  */
+ @media only screen and (max-width: 425px){
+  .link-button{
+    margin: 0.2rem;
+  }
+ }
  *,
  *::before,
  *::after{
@@ -18,7 +23,7 @@
   height: auto;
   background-color: #312a50;
   object-fit: cover;
-  background-image: url(../../static/main/images/homepage_background.png);
+  background-image: url(homepage_background.png);
  }
  .link-button{
   font-weight: bold; 
@@ -76,7 +81,6 @@ section{
   display: flex;
   justify-content: space-between;
   padding: 1rem 0;
-
 }
 .accordion-link i {
   color:#fff;
@@ -174,8 +178,4 @@ h5{
   font-weight: 550;
   text-decoration: underline;
 }
-@media only screen and (max-width: 425px){
-  .link-button{
-    margin: 0.2rem;
-  }
   
