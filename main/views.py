@@ -117,13 +117,14 @@ def contactus_form_view(request):
         message=request.POST['message']
         contactus_form_obj=contactus_form.objects.create(name=name,email=email,message=message)
         contactus_form_obj.save()
+    return redirect('home')
 
 def newsletter_view(request):
     if request.method=='POST':
-        email=request.POST['email']
+        email=request.POST['email_letter']
         news_obj=newsletter.objects.create(email=email)
         news_obj.save()
-
+    return redirect('home')
 @login_required
 def logout(request):
     django_logout(request)
