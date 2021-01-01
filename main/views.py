@@ -21,8 +21,10 @@ def contact_us(request):
     return  render(request,'main/contact_us.html')
 def about_us(request):
     return render(request,'main/aboutus.html')
+@login_required    
 def buysite(request):
     return render(request,'main/buy_site.html')
+@login_required
 def sellsite(request):
     return render(request,'main/sell_site.html')
 # def about_us(request):

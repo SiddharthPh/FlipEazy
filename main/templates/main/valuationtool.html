@@ -124,6 +124,7 @@
 			
  		</div>
 	 </div> -->
+	 <form>
 <div class="container row" style="margin-top: 2rem;">
 
   <div class="card col l8 offset-l2  m8 offset-m2 s12" style="padding:1.2rem;background-color: rgb(243, 244, 245);">
@@ -138,7 +139,7 @@
           </div>
           <div class="input-field col s12">
             <i class="material-icons prefix">account_box</i>
-            <input id="first_name" type="text" class="validate">
+            <input id="full_name" type="text" class="validate">
             <label for="first_name">Full Name</label>
           </div>
           
@@ -149,21 +150,21 @@
           </div>
           <div class="input-field col s12">
             <i class="material-icons prefix">attach_money</i>
-            <input id="revenue" type="text" class="validate">
+            <input id="monthly_revenue" type="text" class="validate">
             <label for="revenue">Monthly Revenue in $</label>
           </div>
           <div class="input-field col s12">
             <i class="material-icons prefix">import_export</i>
-            <input id="profit" type="text" class="validate">
+            <input id="monthly_profit" type="text" class="validate">
             <label for="profit">Monthly Profit in  $</label>
           </div>
           <div class="input-field col s12">
             <i class="material-icons prefix">http</i>
-            <input id="traffic" type="text" class="validate">
+            <input id="traffic_month"type="text" class="validate">
             <label for="traffic">Monthly Traffic (Over past 6 months)</label>
           </div>          
         <div class="col s12 l7 ">
-           <a href="#" class="white-text btn-large waves-effect deep-purple right" style="border-radius: 0.5rem;font-weight: 600;" >Submit</a> 
+           <a href="{% url 'data_submit'%}" class="white-text btn-large waves-effect deep-purple right" style="border-radius: 0.5rem;font-weight: 600;" >Submit</a> 
         </div>
       </div>
     </div>  
@@ -231,13 +232,13 @@
 			
 			function switchToOut(){
 				var url=document.getElementById("url").value
-				var first_name= document.getElementById("first_name").value
+				// var first_name= document.getElementById("first_name").value
 				// console.log(name1)
-				var last_name=document.getElementById("last_name").value
-				var name=first_name+last_name
+				// var last_name=document.getElementById("last_name").value
+				var name=document.getElementById("full_name").value
 				var email_add=document.getElementById("email_add").value
-				var annual_revenue=document.getElementById("annual_revenue").value
-				var annual_profit=document.getElementById("annual_profit").value
+				var monthly_revenue=document.getElementById("annual_revenue").value
+				var monthly_profit=document.getElementById("annual_profit").value
 				var traffic_month=document.getElementById("traffic_month").value
 				// var url_name=document.getElementById("url_text").value
 				// console.log(url_name)
@@ -250,8 +251,8 @@
 				// console.log(obj)
 				// console.log(profit_calc)
 				// console.log(traffic_calc)
-				annual_profit_calc=parseFloat(annual_profit)
-				monthly_profit=annual_profit
+				monthly_profit_calc=parseFloat(monthly_profit)
+				// monthly_profit=annual_profit
 				traffic_calc=parseFloat(traffic_month)
 				// var least_value_out=(monthly_profit)*22
 				// var less_value_out=(monthly_profit)*25
