@@ -161,11 +161,11 @@
           </div>
           <div class="input-field col s12">
             <i class="material-icons prefix">http</i>
-            <input id="traffic_month"type="text" class="validate">
+            <input id="traffic_month" type="text" class="validate">
             <label for="traffic">Monthly Traffic (Over past 6 months)</label>
           </div>          
         <div class="col s12 l7 ">
-           <a href="{% url 'data_submit'%}" class="white-text btn-large waves-effect deep-purple right" style="border-radius: 0.5rem;font-weight: 600;" >Submit</a> 
+           <a href="{% url 'data_submit'%}" class="white-text btn-large waves-effect deep-purple right" id="submit_button" style="border-radius: 0.5rem;font-weight: 600;" onclick="switchToOut()">Submit</a> 
         </div>
       </div>
     </div>  
@@ -240,7 +240,7 @@
 				var email_add=document.getElementById("email_add").value
 				var monthly_revenue=document.getElementById("monthly_revenue").value
 				var monthly_profit=document.getElementById("monthly_profit").value
-				console.log(monthly_profit)
+				console.log('monthly_profit')
 				var traffic_month=document.getElementById("traffic_month").value
 				// var url_name=document.getElementById("url_text").value
 				// console.log(url_name)
@@ -348,7 +348,8 @@
 			var elem = document.querySelector('.sidenav');
 		 var instance = new M.Sidenav(elem);
 	   
-	   
+		 document.getElementById("submit_button").addEventListener("click", switchToOut);
+
 		 
 		 </script>
 
