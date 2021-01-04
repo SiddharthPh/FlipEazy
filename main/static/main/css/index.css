@@ -8,12 +8,12 @@
 }
  .banner{
   width: 100%;
-  height: auto;
+  height:auto;
   background-color: #312a50;
   object-fit: cover;
   background-image: url(images/homepage_background.png);
  }
-.icons{
+#adsense,#adwords,#amazon{
   width: 60%;
   height: auto;
   border-radius: 2rem;
@@ -21,9 +21,11 @@
   box-shadow: 0px 2px 2px 0px #312a50;
   margin: 2rem 2rem;
 }
+#amazon{
+  width: 85%;
+}
 .texts{
   font-size: 2rem;
-
   text-align: center;
 }
 h5{
@@ -73,7 +75,7 @@ span{
   .texts  {
     font-size:16px !important; 
   }
-  .icons{
+    #adwords,#adsense{
     margin: 1rem !important;
     width: 80% !important; 
   }
@@ -85,15 +87,54 @@ span{
     width: 410px;
 
   }
+    #amaz{
+    margin-left: 1rem;
+    margin-top: 0.7rem;
+  }
 }
+@media only screen and (max-width: 375px){
+    #amazon{
+    margin: 1rem !important;
+    width: 120% !important; 
+  }
+
+}
+
+@media only screen and (max-width: 425px){
+    #amazon{
+    margin: 0.5rem !important;
+    width: 105% !important; 
+  }
+  #amaz{
+    margin-top: 1rem !important;
+    margin-left: 0rem !important;
+  }
+  .link-button{    
+    margin: 0.7rem !important;
+    padding: 0 1.7rem !important;
+  }
+}
+@media only screen and (max-width: 500px){
+    #amazon{
+    margin-top: 1rem !important;
+    width: 110% !important; 
+  }
+  #amaz{
+    margin-left: 3rem !important;
+    margin-top: 0rem !important;
+  }
+}
+
+
   @media only screen and (max-width: 400px) {
   .texts  {
     font-size:14px !important; 
   }
-  .icons{
+  #adsense,#adwords{
     margin: 0.5rem !important;
     width: 95% !important; 
   }
+
   .mob_d{
     font-size: 2rem !important; 
   }
@@ -101,6 +142,9 @@ span{
     
     width: 300px;
 
+  }
+  #amaz{
+    margin: 1rem 1rem !important; 
   }
 
   }
