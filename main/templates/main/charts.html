@@ -2,7 +2,10 @@
 <html>
 <head>
 	<title>Valuation Tool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<!-- CSS  -->
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -40,12 +43,12 @@
         <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
         <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
         {% if user.is_authenticated %}
-        <li><a class="white-text" href="{% url 'logout' %}">Logout</a></li>
+        <li><a class="center" href="{% url 'logout' %}">Logout</a></li>
         {% else %}
-        <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
+        <li><a class="center" href="{% url 'login' %}">Login</a></li>
         {% endif %}
         <li><a class="center" href="{% url 'about_us' %}">About Us</a></li>
-        <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
+        <li><a class="center" href="{% url 'contact_us' %}">Contact Us</a></li>
         <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Tool</a></li>
       </ul>
     </div>

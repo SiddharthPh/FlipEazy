@@ -56,9 +56,9 @@
         <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Tool</a></li>
         <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
         {% if user.is_authenticated %}
-        <li><a class="white-text" href="{% url 'logout' %}">Logout</a></li>
+        <li><a class="center" href="{% url 'logout' %}">Logout</a></li>
         {% else %}
-        <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
+        <li><a class="center" href="{% url 'login' %}">Login</a></li>
         {% endif %}
         
       </ul>
