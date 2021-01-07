@@ -73,22 +73,17 @@ def signup_submit(request):
         return redirect('/login')
 
 def data_submit(request):
-    # form = NameForm(request.GET)
-    # form.your_name=
     if request.method == 'POST':
-        data=request.body
-        data=data.decode("utf-8") 
-        data=json.loads(data)
-        tools=tool.objects.create(
-            name=data['name'],
-            url=data['url'],
-            email=data['email']
-        )
-        tools.save()
-        # tool_obj=tool(name=name1)
-        # tool_obj.name=name1
-        # tool_obj.save()
-    return render(request,'main/charts.html')
+        name=request.POST['full_name']
+        url=request.POST['url']
+        email=request.POST['email']
+        # revenue=request.POST['monthly_revenue']
+        profit=request.POST['monthly_profit']
+        profit_1=int(profit)*27
+        context={'profit':profit_1}
+        tool_obj=tool.objects.create(name=name,email=email,url=url)
+        tool_obj.save()
+    return render(request,'main/charts.html',context)
 def sell_now(request):
     return render(request,'main/sellnow.html')
 # def submit(request):

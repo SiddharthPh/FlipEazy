@@ -58,7 +58,7 @@
       <div class="row" style="margin-bottom: 10em;margin-top: 7rem;">
         <div class="col s12 l7 m7" >
             <h4 class="oranget" style="">Estimated Worth of Your  <br> Website</h4>
-            <p class="pricet center" style="font-weight: bold;font-size: 5rem;margin-top:4.6rem;" id="output"></p>
+            <p class="pricet center" style="font-weight: bold;font-size: 5rem;margin-top:4.6rem;">{{profit}}</p>
            <div style="margin-top: 4rem;display: flex;justify-content: center;">
             <a href="{% url 'sellnow' %}" class="btn-large center " style=" background-color:#D2683C;border-radius: 5rem;font-weight: 700 !important;letter-spacing: 3px; font-family: PT Sans";>SELL NOW</a>          
           </div> 
@@ -70,11 +70,11 @@
         </div>
       </div>
   </div>
-      <script>
-        var value=sessionStorage.getItem("recommended")
+      <!-- <script>
+        var value=window.sessionStorage.getItem("recommended")
         console.log(value)
         document.getElementById("output").innerHTML="$"+value.toString()
-      </script>
+      </script> -->
 </body>
 <style type="text/css">
   .disclaimer{

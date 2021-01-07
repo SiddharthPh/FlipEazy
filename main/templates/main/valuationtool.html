@@ -125,9 +125,9 @@
 			
  		</div>
 	 </div> -->
-	 <form>
+<form action="{% url 'data_submit' %}" method="POST">
+		{% csrf_token %}
 <div class="container row" style="margin-top: 2rem;">
-
   <div class="card col l8 offset-l2  m8 offset-m2 s12" style="padding:1.2rem;background-color: rgb(243, 244, 245);">
     <h4 class="center" style="font-weight: 600;">Valuation Form<br> (100% confidential)</br></h4>
     <hr style="width: 40%;margin: auto ; border-color:#00c4b5;">
@@ -135,48 +135,55 @@
         <div class="row">          
           <div class="input-field col s12">
             <i class="material-icons prefix">link</i>
-            <input id="url" type="text" class="validate">
+            <input id="url" name="url" type="text" class="validate" required>
             <label for="url">Enter Your URL here</label>
           </div>
           <div class="input-field col s12">
             <i class="material-icons prefix">account_box</i>
-            <input id="full_name" type="text" class="validate">
+            <input id="full_name" name="full_name" type="text" class="validate" required>
             <label for="first_name">Full Name</label>
           </div>
           
           <div class="input-field col s12">
             <i class="material-icons prefix">email</i>
-            <input id="email_add" type="text" class="validate">
+            <input id="email_add" name="email" type="text" class="validate" required>
             <label for="email">Email Address</label>
           </div>
           <div class="input-field col s12">
             <i class="material-icons prefix">attach_money</i>
-            <input id="monthly_revenue" type="text" class="validate">
+            <input id="monthly_revenue" name="monthly_revenue" type="text" class="validate" required>
             <label for="revenue">Monthly Revenue in $</label>
           </div>
           <div class="input-field col s12">
             <i class="material-icons prefix">import_export</i>
-            <input id="monthly_profit" type="text" class="validate">
+            <input id="monthly_profit" name="monthly_profit" type="text" class="validate" required>
             <label for="profit">Monthly Profit in  $</label>
           </div>
           <div class="input-field col s12">
             <i class="material-icons prefix">http</i>
-            <input id="traffic_month" type="text" class="validate">
+            <input id="traffic_month" name="monthly_traffic" type="text" class="validate" required>
             <label for="traffic">Monthly Traffic (Over past 6 months)</label>
           </div>          
         <div class="col s12 l7 ">
-           <a href="{% url 'data_submit'%}" class="white-text btn-large waves-effect deep-purple right" id="submit_button" style="border-radius: 0.5rem;font-weight: 600;" onclick="switchToOut()">Submit</a> 
+           <button class="white-text btn-large waves-effect deep-purple right" id="submit_button" style="border-radius: 0.5rem;font-weight: 600;" type="submit">Submit</button> 
         </div>
       </div>
     </div>  
   </div>  
 </div>
+</form>
 </body>
 
  		
 
  		<script type="text/javascript">
- 			
+			//  var revenue=document.getElementById("monthly_revenue").value
+			//  var profit=document.getElementById("monthly_profit").value
+			//  monthly_profit=parseFloat(profit)
+
+			//  var value_out=(monthly_profit)*27
+			// window.sessionStorage.setItem("recommended",value_out);
+
  				// Functions for NEXT Button
  			// function switchToFullName(){
  			// 	document.querySelector('#fullname').style.display='block';
@@ -239,8 +246,7 @@
 				var name=document.getElementById("full_name").value
 				var email_add=document.getElementById("email_add").value
 				var monthly_revenue=document.getElementById("monthly_revenue").value
-				var monthly_profit=document.getElementById("monthly_profit").value
-				console.log('monthly_profit')
+				var monthly_profit=document.getElementById("monthly_profit")
 				var traffic_month=document.getElementById("traffic_month").value
 				// var url_name=document.getElementById("url_text").value
 				// console.log(url_name)
