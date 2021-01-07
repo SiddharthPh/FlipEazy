@@ -123,7 +123,7 @@ def contactus_form_view(request):
             message=message,
             from_email='siddharthapothukuchi@gmail.com',
             recipient_list=['saitejasuggala458@gmail.com'],
-            fail_silently=False
+            fail_silently=True
         )
     return redirect('home')
 # def send_email(from_addr: settings.EMAIL_HOST_USER, to_addr: "saitejasuggala458@gmail.com", subject: "message"):
