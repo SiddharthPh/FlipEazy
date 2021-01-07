@@ -82,10 +82,11 @@
   </div>
  
 
-  <form action="{% url 'contactus_form' %}">
+<form action="{% url 'contactus_form' %}" method="POST">
+    {% csrf_token %}
 <div class="container row" style="margin-top: 2rem;">
   <div class="card col l8 offset-l2  m8 offset-m2 s12" style="padding:1.2rem;background-color: rgb(243, 244, 245);">
-    <h4 class="center white-text" style="font-weight: 600;">Contact Us</h4>
+    <h4 class="center" style="font-weight: 600;">Contact Us</h4>
     <hr style="width: 30%;margin: auto ; border-color:#00c4b5;">
       <div class="card" style="padding: 1.2rem;margin-top: 1.9rem;">
         <div class="row">          
@@ -108,7 +109,7 @@
           <label for="icon_prefix2">Enter Your Message Here </label>
         </div>
         <div class="col s12 l7 ">
-           <a href="" class="white-text btn-large waves-effect deep-purple right" style="border-radius: 0.5rem;font-weight: 600;" >Submit</a> 
+           <button class="btn-large waves-effect deep-purple right" style="border-radius: 0.5rem;font-weight: 600;" type="submit" name="action">Submit</button> 
         </div>
       </div>
     </div>  

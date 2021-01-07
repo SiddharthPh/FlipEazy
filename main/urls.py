@@ -21,6 +21,6 @@ urlpatterns=[
     path('signup/', views.signup_submit, name="signup_submit"),
     path('signin/',views.signin_submit,name="signin_submit"),
     path('sellnow/',views.sell_now, name="sellnow"),
-    path('contactus_form/',views.contactus_form_view,name="contactus_form"),
+    path('contactus_form',views.contactus_form_view,name="contactus_form"),
     path('newsletter',views.newsletter_view, name="newsletter"),
 ]
