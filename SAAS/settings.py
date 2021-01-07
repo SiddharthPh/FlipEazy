@@ -137,7 +137,7 @@ DEFAULT_FILE_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 django_on_heroku.settings(locals())
 LOGIN_URL='login'
-EMAIL_HOST = 'smtp.sendgrid.net'#smtp.privateemail.com
+EMAIL_HOST = 'smtp.gmail.net'#smtp.privateemail.com
 EMAIL_HOST_USER = 'siddharthapothukuchi@gmail.com'
 EMAIL_HOST_PASSWORD = 't4mzxueq8iPOEtN'
 EMAIL_PORT = 587
