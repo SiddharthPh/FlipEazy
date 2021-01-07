@@ -5,6 +5,12 @@ from django.contrib import messages
 from django.contrib.auth import logout as django_logout
 from .models import *
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+from django.conf import settings
+import smtplib
+from typing import List
+SMTP_HOST = "smtp.gmail.com"
+SMTP_PORT = 587
 
 import json
 # Create your views here.
@@ -112,7 +118,21 @@ def contactus_form_view(request):
         message=request.POST['message']
         contactus_form_obj=contactus_form.objects.create(name=name,email=email,message=message)
         contactus_form_obj.save()
+        send_mail(
+            subject='Test Mail',
+            message=message,
+            from_email='siddharthapothukuchi@gmail.com',
+            recipient_list=['saitejasuggala458@gmail.com'],
+            fail_silently=False
+        )
     return redirect('home')
+# def send_email(from_addr: settings.EMAIL_HOST_USER, to_addr: "saitejasuggala458@gmail.com", subject: "message"):
+#         msg = message
+#         with smtplib.SMTP(host=SMTP_HOST, port=SMTP_PORT) as server:
+#             server.starttls()
+#             server.login(SMTP_USER, SMTP_PASSWORD)
+#             server.sendmail(from_addr, to_addr, msg)
+#     return redirect('home')
 
 def newsletter_view(request):
     if request.method=='POST':
