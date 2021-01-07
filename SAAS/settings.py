@@ -142,4 +142,5 @@ EMAIL_HOST_USER = 'siddharthapothukuchi@gmail.com'
 EMAIL_HOST_PASSWORD = 't4mzxueq8iPOEtN'
 EMAIL_PORT = 587
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS = True
+# EMAIL_USE_TLS = True
+EMAIL_USE_SSL-True
