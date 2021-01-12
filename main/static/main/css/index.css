@@ -11,7 +11,7 @@
   height:auto;
   background-color: #312a50;
   object-fit: cover;
-  background-image: url(images/homepage_background.png);
+  background-image: url(../../static/main/images/homepage_background.png);
  }
 #adsense,#adwords,#amazon{
   width: 60%;
@@ -27,6 +27,7 @@
 .texts{
   font-size: 2rem;
   text-align: center;
+  margin: auto;
 }
 h5{
   text-decoration: none !important ;
@@ -75,11 +76,11 @@ span{
   .texts  {
     font-size:16px !important; 
   }
-    #adwords,#adsense{
+/*    #adwords,#adsense{
     margin: 1rem !important;
     width: 80% !important; 
   }
-  .mob_d{
+*/  .mob_d{
     font-size: 2.4rem !important; 
   }
    .carousel-cell img{
@@ -87,42 +88,42 @@ span{
     width: 410px;
 
   }
-    #amaz{
+/*    #amaz{
     margin-left: 1rem;
     margin-top: 0.7rem;
-  }
+  }*/
 }
 @media only screen and (max-width: 375px){
-    #amazon{
+/*    #amazon{
     margin: 1rem !important;
     width: 120% !important; 
-  }
+  }*/
 
 }
 
 @media only screen and (max-width: 425px){
-    #amazon{
+/*    #amazon{
     margin: 0.5rem !important;
     width: 105% !important; 
   }
   #amaz{
     margin-top: 1rem !important;
     margin-left: 0rem !important;
-  }
+  }*/
   .link-button{    
     margin: 0.7rem !important;
     padding: 0 1.7rem !important;
   }
 }
 @media only screen and (max-width: 500px){
-    #amazon{
+/*    #amazon{
     margin-top: 1rem !important;
     width: 110% !important; 
   }
   #amaz{
     margin-left: 3rem !important;
     margin-top: 0rem !important;
-  }
+  }*/
 }
 
 
@@ -130,11 +131,11 @@ span{
   .texts  {
     font-size:14px !important; 
   }
-  #adsense,#adwords{
+/*  #adsense,#adwords{
     margin: 0.5rem !important;
     width: 95% !important; 
   }
-
+*/
   .mob_d{
     font-size: 2rem !important; 
   }
@@ -143,8 +144,8 @@ span{
     width: 300px;
 
   }
-  #amaz{
+/*  #amaz{
     margin: 1rem 1rem !important; 
-  }
+  }*/
 
   }
