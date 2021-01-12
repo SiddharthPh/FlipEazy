@@ -1,75 +1,12 @@
-<!DOCTYPE html>
-<html>
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
 <head>
 	<title>Contact_us</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="../../static/main/css/preloader.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-   
-
 </head>
-<body style="background-color: rgba(205,205,205,0.01);font-family: PT Sans;" onload="fun()">
-  <div class="page-loader">
-    <div class="container">
-   
-      <div class="loader"></div> 
-    </div>
-</div>
-  <script type="text/javascript">
-    function fun(){
-    document.querySelector(".page-loader").style.display="none";
-  }
-
-     $(window).load(function(){
-                $('.page-loader').fadeOut();                                                                        
-            });
-  </script>
-	<nav class=" deep-purple" role="navigation">
-    	<div class="nav-wrapper container" style="width: 100%;">
-			<a href="{% url 'home' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
-
-      <ul class="right hide-on-med-and-down">
-        <li><a class="white-text" href="{% url 'blog' %}">Blog</a> </li>
-        <!-- <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li> -->
-        {% if user.is_authenticated %}
-        <li><a class="white-text" href="{% url 'logout' %}">Logout</a></li>
-        {% else %}
-        <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
-        {% endif %}
-        <li><a class="white-text" href="{% url 'about_us' %}">About Us</a></li>
-        <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
-        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" style="font-weight: bold;border-radius:0.3rem;" href="{% url 'valuationtool' %}" >Free Valuation Tool</a></li>
-      </ul>
-
-      <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="sidenav">
-        <li style=" background-color: #312a50;border-radius: 2rem;"><a class="white-text center" href="#" style="font-weight: 500;font-family: Rancho;font-size: 20px;">FlipEazy</a></li>
-        <li><a class="center" href="{% url 'home' %}">Home</a></li>
-        <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
-        <li><a class="center" href="{% url 'about_us' %}">About Us</a></li>
-        <li><a class="center" href="{% url 'contact_us' %}">Contact Us</a></li>
-        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Tool</a></li>
-        <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
-        {% if user.is_authenticated %}
-        <li><a class="center" href="{% url 'logout' %}">Logout</a></li>
-        {% else %}
-        <li><a class="center" href="{% url 'login' %}">Login</a></li>
-        {% endif %}
-        
-      </ul>
-    </div>
-    </nav>
   <!-- Navbar -->
     <!-- Banner -->
-    <div class="banner" style="background-image: url(../../static/main/images/homepage_background.png);">
+  <div class="banner" style="background-image: url(../../static/main/images/homepage_background.png);">
     <div class="section no-pad-bot">
       <div class="container">        
         <h1 class="center white-text" style="font-family: 'Pridi', serif;margin-bottom: 6%;">Contact Us </h1>                
@@ -115,58 +52,11 @@
     </div>  
   </div>  
 </div>
-</form>
-<footer class="page-footer deep-purple" >
-    <div class="">
-      <div class="row">
-        <div class="col l1"></div>
-        <div class="col l4 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-        </div>
-        <div class="col l1"></div>
-        <div class="col l4 s12">
-          <form action="{% url 'newsletter' %}" method="POST">
-            {% csrf_token %}
-          <div class="card hoverable" style="padding: 2rem 1rem;background-color: #312a50;">
-            <h6 style="font-size: 1.6rem;">Subscribe to Our Newsletter</h6>
-            <div class="input-field white-text" >
-              <i class="material-icons prefix">mail</i>
-              <input name="email_letter" id="email_letter" type="text" class="validate white-text">
-              <label for="subs">Enter Your Email Address</label>
-            </div>
-          </div>
-        </form>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-          
-      <ul style="display: flex;justify-content: center;">
-          <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/google-logo.png"/></a></li>
-          <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/facebook-new.png"/></a></li>
-          <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/linkedin.png"/></a></li>        
-      </ul>
-        </div>
-    <div class="footer-copyright">
-      <div class="container">
-        <h6 class="center">All the copyrights are reserved by FlipEazy</h6>
-      
-      </div>
-    </div>
-  </footer>
-  
-
-
-
-
-  
+</form>  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
- <script type="text/javascript">
+<script type="text/javascript">
      var elem = document.querySelector('.sidenav');
   var instance = new M.Sidenav(elem);
-  </script>
- 
+</script>
 
-  </body>
-</html>
+{% endblock %}

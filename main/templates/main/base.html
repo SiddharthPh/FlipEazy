@@ -4,19 +4,15 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Marketplace-Home</title>
-
-  <!-- CSS  -->
-  <link rel="stylesheet" type="text/css" href="../../static/main/css/index.css">
-    <link rel="stylesheet" type="text/css" href="../../static/main/css/preloader.css">
+  <!-- CSS  --> 
+  <link rel="stylesheet" type="text/css" href="../../static/main/css/preloader.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
   <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </head>
+
 <body style="background-color: rgba(205,205,205,0.01);font-family: PT Sans;" onload="fun()">
   <div class="page-loader">
     <div class="container">
@@ -24,28 +20,19 @@
       <div class="loader"></div> 
     </div>
 </div>
-  <script type="text/javascript">
-    function fun(){
-    document.querySelector(".page-loader").style.display="none";
-  }
-
-     $(window).load(function(){
-                $('.page-loader').fadeOut();                                                                        
-            });
-  </script>
   <nav class=" deep-purple" role="navigation">
     <div class="nav-wrapper container"style=" width: 100%; ">
-      <a  href="{% url 'home' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
+      <a  href="{% url 'home' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="208" height="auto"></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="white-text" href="{% url 'blog' %}">Blog</a> </li>
         <!-- <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li> -->
-        {% if user.is_authenticated %}
+        <li><a class="white-text" href="{% url 'about_us' %}">About us</a></li>
+        <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
+       {% if user.is_authenticated %}
         <li><a class="white-text" href="{% url 'logout' %}">Logout</a></li>
         {% else %}
         <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
         {% endif %}
-        <li><a class="white-text" href="{% url 'about_us' %}">About us</a></li>
-        <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
         <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" href="{% url 'valuationtool' %}" style="font-weight: bold;border-radius:0.3rem;" >Free Valuation Tool</a></li>
       </ul>
       <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -55,130 +42,65 @@
         <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
         <li><a class="center" href="{% url 'about_us' %}">About us</a></li>
         <li><a class="center" href="{% url 'contact_us' %}">Contact Us</a></li>
-        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Tool</a></li>
-        <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
         {% if user.is_authenticated %}
         <li><a class="center" href="{% url 'logout' %}">Logout</a></li>
         {% else %}
         <li><a class="center" href="{% url 'login' %}">Login</a></li>
         {% endif %}
+        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Tool</a></li>
+        <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
+        
         
       </ul>
     </div>
   </nav>
-  <div class="banner" style="background-image: url(../../static/main/images/homepage_background.png);">
-    <div class="section no-pad-bot">
-      <div class="container">        
-        <h1 class="center white-text">Buy & Sell</h1>
-        <h1 class="center white-text" style="margin-top: 1rem;">Quality Content Websites</h1>
-        <div style="text-align: center; height: 10rem;">          
-             <a href="{% url 'buysite' %}" class="reddishblack-text btn-large white  waves-effect link-button" style="font-weight: 600;" >Buy a Site</a> 
-              <a href="{% url 'sellsite' %}" class="reddishblack-text btn-large white  waves-effect link-button" style="font-weight: 600;">Sell a Site</a>                                 
-        </div>     
-      </div>
-    </div>
-  </div>
+  
 
   {% block content %}{% endblock %}
-</div>
-<h3 class="center headings mob_d" >Why Choose Us?</h3>
 
 
-  <!-- Info -->
 
-
-<div class="row" style="margin: auto;margin-bottom: 4rem;">
-    <div class="col l1" style="width: 10% !important;"></div>
-    <div class="col s12 m12 l3">
-        <div class="card shadow hoverable" >
-          <div class="card-head"><span class="center white-text">Fully Vetted Websites</span></div>
-          <h6 class="card-content" >Contrary to popular belief,Lorem Epsum is not simply random text.It has roots in a piece of classical Latin Literature from.Contrary to popular belief,Lorem Epsum is not simply random text.It has roots in a piece of classical Latin Literature from.Contrary to popular belief.</h6>
-      </div>
-    </div> 
-    <div class="col l1" style="width: 2% !important;"></div>
-     <div class="col s12 m12 l3">
-        <div class="card shadow hoverable ">
-          <div class="card-head"><span class="center white-text">Fully Vetted Websites</span></div>
-          <h6 class="card-content">Contrary to popular belief,Lorem Epsum is not simply random text.It has roots in a piece of classical Latin Literature from.Contrary to popular belief,Lorem Epsum is not simply random text.It has roots in a piece of classical Latin Literature from.Contrary to popular belief.</h6>
-      </div>
-    </div> 
-    <div class="col l1" style="width: 2% !important;"></div>
-     <div class="col s12 m12 l3">
-        <div class="card shadow hoverable">
-          <div class="card-head"><span class="center white-text">Fully Vetted Websites</span></div>
-          <h6 class="card-content">Contrary to popular belief,Lorem Epsum is not simply random text.It has roots in a piece of classical Latin Literature from.Contrary to popular belief,Lorem Epsum is not simply random text.It has roots in a piece of classical Latin Literature from.Contrary to popular belief.</h6>
-      </div>
-    </div> 
-  </div> 
-  <h2 class="center blog_h"><strong>Check Out Our Blogs</strong></h2>
-  <!-- <h6 class="grey-text center">This Section is Under development</h6><br> -->
-  <div class="main-carousel " data-flickity='{ "wrapAround":true, "autoPlay":2000, "imagesLoaded": true}' tabindex="0" >
-    <div class="carousel-cell  " ><a href="{% url 'email_list' %}"><img  src="../../static/main/images/MAIL.jpg" ></a></div>
-    <div class="carousel-cell "><a href="{% url 'automation' %}"><img  src="../../static/main/images/Automation.jpg" ></a></div>
-    <div class="carousel-cell "><a href="{% url 'whymarketplace' %}"><img  src="../../static/main/images/MARK.jpg" ></a></div>
-    <div class="carousel-cell "><a href="{% url 'blog' %}"><img  src="../../static/main/images/FACTORS.jpg" ></a></div>
-    <div class="carousel-cell "><a href="{% url 'onlinebusiness' %}"><img  src="../../static/main/images/blog1_thumb.jpg" ></a></div>
-    <div class="carousel-cell "><a href="{% url 'leverage' %}"><img src="../../static/main/images/Lev content.jpg" ></a></div>    
-  </div>
-
-  <style>
-    .carousel-cell{
-      margin: 0.2rem;
-     
-    }
-    .main-carousel{
-      margin-bottom: 6rem;
-    }
-    .carousel-cell img{
-      border-radius: 1.2rem;
-    }
-    @media only screen and (max-width: 550px){
-    .blog_h{
-      font-size: 2rem;
-    }
-  }
-  </style>
-
-
-<footer class="page-footer deep-purple" >
-  <div class="">
-    <div class="row">
-      <div class="col l1"></div>
-      <div class="col l4 s12">
-        <h5 class="white-text">Company Bio</h5>
-        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-      </div>
-      <div class="col l1"></div>
-      <div class="col l4 s12">
-        <form action="{% url 'newsletter' %}" method="POST">
-          {% csrf_token %}
-        <div class="card hoverable" style="padding: 2rem 1rem;background-color: #312a50;">
-          <h6 style="font-size: 1.6rem;">Subscribe to Our Newsletter</h6>
-          <div class="input-field white-text" >
-            <i class="material-icons prefix">mail</i>
-            <input name="email_letter" id="email_letter" type="text" class="validate white-text">
-            <label for="subs">Enter Your Email Address</label>
+  <footer class="page-footer deep-purple" >
+    <div class="">
+      <div class="row">
+        <div class="col l1"></div>
+        <div class="col l4 s12">
+          <div class="card hoverable" style="padding: 2rem 1rem;background-color: #312a50;">
+            <h6 style="font-size: 1.6rem;">Newsletter</h6>
+            <h6 class="orange-text">Exlcusive Website Listings and Offers</h6>
+            <div class="input-field ">
+              <i class="material-icons prefix">mail</i>
+              <input  id="subs" type="text" class="validate white-text">
+              <label for="subs">Enter Your Email Address</label>
+          </div>
           </div>
         </div>
-      </form>
+        <div class="col l1"></div>
+        <div class="col l4 s12">
+            <h4>Quick Links</h4>
+            <a class="white-text" href="{% url 'blog' %}"><p>Blog</p></a>
+            <a class="white-text" href="{% url 'buysite' %}"><p>Buy a Site</p></a>
+            <a class="white-text" href="{% url 'sellsite' %}"><p>Sell a Site</p></a>
+            <a class="white-text" href="{% url 'login' %}"><p>Login</p></a>
+            <a class="white-text" href="{% url 'valuationtool' %}"><p>Valuation Tool</p></a>            
+        </div>
+
+      </div>
       </div>
     </div>
-  </div>
-  <div class="container">
-        
-    <ul style="display: flex;justify-content: center;">
-        <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/google-logo.png"/></a></li>
-        <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/facebook-new.png"/></a></li>
-        <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/linkedin.png"/></a></li>        
-    </ul>
-      </div>
-  <div class="footer-copyright">
-    <div class="container">
-      <h6 class="center">All the copyrights are reserved by FlipEazy</h6>
-    
+    <div class="footer-copyright">
+      <div class="container" style="display: flex;">
+        <h6 class="center">All the copyrights are reserved by FlipEazy</h6>  
+          <ul  style="display: flex;justify-content: center;margin:auto;">
+            <li><a class="white-text"><img src="../../static/main/images/instagram.svg" width="36" /></a></li>
+            <li><a class="white-text" ><img src="../../static/main/images/facebook.svg" width="36" /></a></li>
+            <li><a class="white-text"><img src="https://img.icons8.com/fluent/42/000000/linkedin.png"/></a></li>        
+            <li><a class="white-text"><img src="https://img.icons8.com/color/42/000000/twitter--v1.png"/></a></li>    
+            <li><a href="mailto:admin@flipeazy.com"><i class="material-icons" style="font-size: 2.6rem;">mail</i></a></li>
+          </ul>    
     </div>
-  </div>
-</footer>
+  </footer>
+
 
 
    <!-- Scripts-->
@@ -195,7 +117,13 @@
      var instances = M.Carousel.init(elems, options);
    });
  
-   
+       function fun(){
+    document.querySelector(".page-loader").style.display="none";
+  }
+
+     $(window).load(function(){
+                $('.page-loader').fadeOut();                                                                        
+            });
    </script>
    </body>
  </html>

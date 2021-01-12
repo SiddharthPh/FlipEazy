@@ -1,67 +1,10 @@
-<!DOCTYPE html>
-<html>
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
 <head>
-	
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Buy a Digital Asset</title>  
-  <!-- CSS  -->
+  <title>Buy a Digital Asset</title> 
   <link rel="stylesheet" type="text/css" href="../../static/main/css/index.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../../static/main/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-  <link href="../../static/main/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="../../static/main/css/preloader.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: rgba(205,205,205,0.01);font-family: PT Sans;" onload="fun()">
-  <div class="page-loader">
-    <div class="container">
-   
-      <div class="loader"></div> 
-    </div>
-</div>
-  <script type="text/javascript">
-    function fun(){
-    document.querySelector(".page-loader").style.display="none";
-  }
-
-     $(window).load(function(){
-                $('.page-loader').fadeOut();                                                                        
-            });
-  </script>
-  <nav class=" deep-purple" role="navigation">
-    <div class="nav-wrapper container"style=" width: 100%; ">
-      <a  href="{% url 'home' %}" class=" brand-logo white-text" style="font-family: Rancho;font-size: 3.5rem;margin-top:0.35rem;"><img src="../../static/main/images/FlipEasy.png" width="222" height="55"></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a class="white-text" href="{% url 'blog' %}">Blog</a> </li>
-        <!-- <li><a class="white-text" href="{% url 'marketplace' %}">Marketplace</a></li> -->
-        {% if user.is_authenticated %}
-        <li><a class="white-text" href="{% url 'logout' %}">Logout</a></li>
-        {% else %}
-        <li><a class="white-text" href="{% url 'login' %}">Login</a></li>
-        {% endif %}
-        <li><a class="white-text" href="{% url 'about_us' %}">About Us</a></li>
-        <li><a class="white-text" href="{% url 'contact_us' %}">Contact Us</a></li>
-        <li style="line-height: 3rem; margin-top:0.75rem;"><a class="deep-purple-text white right modal-trigger" href="{% url 'valuationtool' %}" style="font-weight: bold;border-radius:0.3rem;" >Free Valuation Tool</a></li>
-      </ul>
-      <a href="" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="sidenav">
-        <li style=" background-color: #312a50;border-radius: 2rem;"><a class="white-text center" href="#" style="font-weight: 500;font-family: Rancho;font-size: 20px;">FlipEazy</a></li>
-        <li><a class="center" href="{% url 'home' %}">Home</a></li>
-        <li><a class="center" href="{% url 'blog' %}">Blogs</a></li>
-        <li><a class="center" href="{% url 'about_us' %}">About Us</a></li>
-        <li><a class="center" href="{% url 'contact_us' %}">Contact Us</a></li>
-        <li><a class="center" href="{% url 'valuationtool' %}">Free Valuation Tool</a></li>
-        <!-- <li><a class="center" href="#">MarketPlace</a></li> -->
-        {% if user.is_authenticated %}
-        <li><a class="center" href="{% url 'logout' %}">Logout</a></li>
-        {% else %}
-        <li><a class="center" href="{% url 'login' %}">Login</a></li>
-        {% endif %}
-        
-      </ul>
-    </div>
-  </nav>
   <div class="banner" style="background-image: url(../../static/main/images/homepage_background.png);">
     <div class="section no-pad-bot">
       <div class="container">        
@@ -79,128 +22,89 @@
   		<h3 class="center" style="font-family: Rancho;margin-top: 0rem;">from FlipEazy</h3>
 	</div>
 	
-	<div class="row" style="margin: auto;margin-bottom: 4rem;">
-	    <div class="col l1" style="width: 10% !important;"></div>
-	    <div class="col s12 m12 l3">
-	        <div class="card shadow hoverable" >
-	          <div class="card-head"><span class="center white-text">Fair Market Price</span></div>
-	          <h6 class="card-content" >We value the website as per the industry norms and we ensure that the asset is neither Undervalued nor Overvalued.</h6>
-	      </div>
-	    </div> 
-	    <div class="col l1" style="width: 2% !important;"></div>
-	     <div class="col s12 m12 l3">
-	        <div class="card shadow hoverable ">
-	          <div class="card-head"><span class="center white-text">Migration Process</span></div>
-	          <h6 class="card-content">Once you've made up your mind to buy an asset, we help you migrate the website to your new host, tranfer the domain, and also help you swap the monetization codes required.</h6>
-	      </div>
-	    </div> 
-	    <div class="col l1" style="width: 2% !important;"></div>
-	     <div class="col s12 m12 l3">
-	        <div class="card shadow hoverable">
-	          <div class="card-head"><span class="center white-text">Seller-Support</span></div>
-	          <h6 class="card-content">We do not leave you hanging once the purchase is done, we also offer 30 day seller support just to make sure that you get a hang of the operations.</h6>
-	      </div>
-	    </div> 	    
-    </div>
+  <div class="row" style="margin: auto;margin-bottom: 4rem;">
+      <div class="col l1" style="width: 10% !important;"></div>
+      <div class="col s12 m12 l3">
+          <div class="card shadow hoverable" >
+            <div class="card-head"><span class="center white-text">Fair Market Price</span></div>
+            <h6 class="card-content" >We value the website as per the industry norms and we ensure that the asset is neither Undervalued nor Overvalued.</h6>
+        </div>
+      </div> 
+      <div class="col l1" style="width: 2% !important;"></div>
+       <div class="col s12 m12 l3">
+          <div class="card shadow hoverable ">
+            <div class="card-head"><span class="center white-text">Migration Process</span></div>
+            <h6 class="card-content">Once you've made up your mind to buy an asset, we help you migrate the website to your new host, tranfer the domain, and also help you swap the monetization codes required.</h6>
+        </div>
+      </div> 
+      <div class="col l1" style="width: 2% !important;"></div>
+       <div class="col s12 m12 l3">
+          <div class="card shadow hoverable">
+            <div class="card-head"><span class="center white-text">Seller-Support</span></div>
+            <h6 class="card-content">We do not leave you hanging once the purchase is done, we also offer 30 day seller support just to make sure that you get a hang of the operations.</h6>
+        </div>
+      </div>      
+  </div>
     <div class="row">
-    	<div class="col l1" style="width: 10% !important;"></div>
-	    <div class="col s12 m12 l3">
-	        <div class="card shadow hoverable" >
-	          <div class="card-head"><span class="center white-text">Profitable Websites</span></div>
-	          <h6 class="card-content" >In order to protect our buyer's interest we only list those websites that are profitable and scalable. We do not entertain loss-making businesses.</h6>
-	      </div>
-	    </div> 
-	    <div class="col l1" style="width: 2% !important;"></div>
-	     <div class="col s12 m12 l3">
-	        <div class="card shadow hoverable ">
-	          <div class="card-head"><span class="center white-text">Free Coaching Calls</span></div>
-	          <h6 class="card-content">If you are a rookie and want help on scaling up the business you can always mail us and we will get on a call with you to help you with whatever required.</h6>
-	      </div>
-	    </div> 
-	    <div class="col l1" style="width: 2% !important;"></div>
-	     <div class="col s12 m12 l3">
-	        <div class="card shadow hoverable">
-	          <div class="card-head"><span class="center white-text">Quality Websites</span></div>
-	          <h6 class="card-content">All the websites that we list have been vetted by our team that pass through the rigid process of verification. All the websites that we list have been vetted by our the rigid process of verification.</h6>
-	      </div>
-	    </div> 
+      <div class="col l1" style="width: 10% !important;"></div>
+      <div class="col s12 m12 l3">
+          <div class="card shadow hoverable" >
+            <div class="card-head"><span class="center white-text">Profitable Websites</span></div>
+            <h6 class="card-content" >In order to protect our buyer's interest we only list those websites that are profitable and scalable. We do not entertain loss-making businesses.</h6>
+        </div>
+      </div> 
+      <div class="col l1" style="width: 2% !important;"></div>
+       <div class="col s12 m12 l3">
+          <div class="card shadow hoverable ">
+            <div class="card-head"><span class="center white-text">Free Coaching Calls</span></div>
+            <h6 class="card-content">If you are a rookie and want help on scaling up the business you can always mail us and we will get on a call with you to help you with whatever required.</h6>
+        </div>
+      </div> 
+      <div class="col l1" style="width: 2% !important;"></div>
+       <div class="col s12 m12 l3">
+          <div class="card shadow hoverable">
+            <div class="card-head"><span class="center white-text">Quality Websites</span></div>
+            <h6 class="card-content">All the websites that we list have been vetted by our team that pass through the rigid process of verification. All the websites that we list have been vetted by our the rigid process of verification.</h6>
+        </div>
+      </div> 
     </div>
     
 	<!-- FAQ -->
 	<h1 style="font-family: Rancho" class="center">FAQ's</h1>
 <div class="container" style="margin-bottom: 3rem;margin-top: 3rem;">
-	<button class="accordion white-text deep-purple"><span>1. How do I buy a site from your marketplace?</span></button>
-	<div class="panel">
-	  <p>You can navigate our “Buy site” page and click on “View Marketplace” where all the websites are listed with the necessary details. Once you find the listing click on the buy button and follow the checkout process.  You can make your payment through credit card or wire transfers are also acceptable.</p>
-	</div>
-	  <button class="accordion white-text deep-purple"><span>2. How do we value a business?</span></button>
-	<div class="panel">
-	  <p>YValuation = Earnings * Multiple.
+  <button class="accordion white-text deep-purple"><span>1. How do I buy a site from your marketplace?</span></button>
+  <div class="panel">
+    <p>You can navigate our “Buy site” page and click on “View Marketplace” where all the websites are listed with the necessary details. Once you find the listing click on the buy button and follow the checkout process.  You can make your payment through credit card or wire transfers are also acceptable.</p>
+  </div>
+    <button class="accordion white-text deep-purple"><span>2. How do we value a business?</span></button>
+  <div class="panel">
+    <p>YValuation = Earnings * Multiple.
 
-	We consider the earnings or the profits of the business and multiply it with the “Multiple”.  We actually follow a rigorous verification process and consider various factors before arriving at the Multiple. Multiple can range anywhere between 20x-40x depending on certain factors.
+  We consider the earnings or the profits of the business and multiply it with the “Multiple”.  We actually follow a rigorous verification process and consider various factors before arriving at the Multiple. Multiple can range anywhere between 20x-40x depending on certain factors.
 
-	For Example:
+  For Example:
 
-	Let us say a content-based website is making $2400 per year. We take an average of 12 months which is $200 per month. We multiply it with say (25x for example) so the total value of the business is $5000</p>
-	</div>
+  Let us say a content-based website is making $2400 per year. We take an average of 12 months which is $200 per month. We multiply it with say (25x for example) so the total value of the business is $5000</p>
+  </div>
 
-	<button class="accordion white-text deep-purple"><span>3. Who handles the Migration Process?</span></button>
-	<div class="panel">
-	  <p>We consider ourselves as a Done-for-you service, so we handle everything right from verification to Migration. You will not have to worry about it.</p>
-	</div>
+  <button class="accordion white-text deep-purple"><span>3. Who handles the Migration Process?</span></button>
+  <div class="panel">
+    <p>We consider ourselves as a Done-for-you service, so we handle everything right from verification to Migration. You will not have to worry about it.</p>
+  </div>
 
-	<button class="accordion white-text deep-purple"><span>4. Can I resell the same business which I bought earlier in your marketplace?</span></button>
-	<div class="panel"> 
-	  <p>Of-course we do not have any such restrictions, However, the website will have to go through the same verification process, and only if it passes our requirements, we list the website.</p>
-	</div>
-	<button class="accordion  deep-purple"><span> 5. How long does the transfer process take? </button>
-	<div class="panel"> 
-	  <p>Once we get a confirmation from your end, the transfer process usually takes 7-10 business days depending on the registrar, where the domain is being transferred from and where it is being transferred to.</p>
-	</div>
+  <button class="accordion white-text deep-purple"><span>4. Can I resell the same business which I bought earlier in your marketplace?</span></button>
+  <div class="panel"> 
+    <p>Of-course we do not have any such restrictions, However, the website will have to go through the same verification process, and only if it passes our requirements, we list the website.</p>
+  </div>
+  <button class="accordion  deep-purple"><span> 5. How long does the transfer process take? </button>
+  <div class="panel"> 
+    <p>Once we get a confirmation from your end, the transfer process usually takes 7-10 business days depending on the registrar, where the domain is being transferred from and where it is being transferred to.</p>
+  </div>
   
 </div>
   <!-- Footer -->
-  <footer class="page-footer deep-purple" >
-    <div class="">
-      <div class="row">
-        <div class="col l1"></div>
-        <div class="col l4 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-        </div>
-        <div class="col l1"></div>
-        <div class="col l4 s12">
-          <form action="{% url 'newsletter' %}" method="POST">
-            {% csrf_token %}
-          <div class="card hoverable" style="padding: 2rem 1rem;background-color: #312a50;">
-            <h6 style="font-size: 1.6rem;">Subscribe to Our Newsletter</h6>
-            <div class="input-field white-text" >
-              <i class="material-icons prefix">mail</i>
-              <input name="email_letter" id="email_letter" type="text" class="validate white-text">
-              <label for="subs">Enter Your Email Address</label>
-            </div>
-          </div>
-        </form>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-          
-      <ul style="display: flex;justify-content: center;">
-          <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/google-logo.png"/></a></li>
-          <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/facebook-new.png"/></a></li>
-          <li><a class="white-text" href="#!"><img src="https://img.icons8.com/fluent/36/000000/linkedin.png"/></a></li>        
-      </ul>
-        </div>
-    <div class="footer-copyright">
-      <div class="container">
-        <h6 class="center">All the copyrights are reserved by FlipEazy</h6>
-      
-      </div>
-    </div>
-  </footer>
   
-  <script>
+<script>
 var acc = document.getElementsByClassName("accordion");
 var i;
 
@@ -337,6 +241,4 @@ button{
            }
   </script>
  
-
-</body>
-</html>
+{% endblock %}

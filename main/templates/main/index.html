@@ -1,7 +1,27 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% block content %}
-  <div class="container" style="margin-top: 1rem;">
+<head>
+  <title>Marketplace-Home</title>
+  <link rel="stylesheet" type="text/css" href="../../static/main/css/index.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</head>
+<div class="banner" style="background-image: url(../../static/main/images/homepage_background.png);">
+    <div class="section no-pad-bot">
+      <div class="container">        
+        <h1 class="center white-text">Buy & Sell</h1>
+        <h1 class="center white-text" style="margin-top: 1rem;">Quality Content Websites</h1>
+        <div style="text-align: center; height: 10rem;">          
+             <a href="{% url 'buysite' %}" class="reddishblack-text btn-large white  waves-effect link-button" style="font-weight: 600;" >Buy a Site</a> 
+              <a href="{% url 'sellsite' %}" class="reddishblack-text btn-large white  waves-effect link-button" style="font-weight: 600;">Sell a Site</a>                                 
+        </div>     
+      </div>
+    </div>
+</div>
+  <br>
+<div class="center" style="margin: "><h3 class="headings">Accepted Monetization Methods</h3></div>     
+<div class="container">
     <div class="row" style="margin: auto;text-align: center;">
     <div class="col s4 m4 l4">
         <img src="../../static/main/images/adsense.svg" id="adsense" class="icons">
@@ -15,11 +35,9 @@
         <img src="../../static/main/images/associate.jpg" id="amazon">
         <h5 class="texts" id="amaz">Amazon Associate</h5><br>         
     </div> 
-     
   </div>
-    
-  </div>
-
+</div>
+<br>
   <!-- Banner -->
 <h3 class="center headings">How it Works ?</h3><br>
 
@@ -139,5 +157,60 @@
   
   
 </div>
+<br>
+<h3 class="center headings mob_d" >Why Choose Us?</h3>
+<br>
+ <!-- Info -->
+<div class="row" style="margin: auto;margin-bottom: 4rem;">
+    <div class="col l1" style="width: 10% !important;"></div>
+    <div class="col s12 m12 l3">
+        <div class="card shadow hoverable" >
+          <div class="card-head"><span class="center white-text">Fully Vetted Websites</span></div>
+          <h6 class="card-content" >Contrary to popular belief,Lorem Epsum is not simply random text.It has roots in a piece of classical Latin Literature from.Contrary to popular belief,Lorem Epsum is not simply random text.It has roots in a piece of classical Latin Literature from.Contrary to popular belief.</h6>
+      </div>
+    </div> 
+    <div class="col l1" style="width: 2% !important;"></div>
+     <div class="col s12 m12 l3">
+        <div class="card shadow hoverable ">
+          <div class="card-head"><span class="center white-text">Fully Vetted Websites</span></div>
+          <h6 class="card-content">Contrary to popular belief,Lorem Epsum is not simply random text.It has roots in a piece of classical Latin Literature from.Contrary to popular belief,Lorem Epsum is not simply random text.It has roots in a piece of classical Latin Literature from.Contrary to popular belief.</h6>
+      </div>
+    </div> 
+    <div class="col l1" style="width: 2% !important;"></div>
+     <div class="col s12 m12 l3">
+        <div class="card shadow hoverable">
+          <div class="card-head"><span class="center white-text">Fully Vetted Websites</span></div>
+          <h6 class="card-content">Contrary to popular belief,Lorem Epsum is not simply random text.It has roots in a piece of classical Latin Literature from.Contrary to popular belief,Lorem Epsum is not simply random text.It has roots in a piece of classical Latin Literature from.Contrary to popular belief.</h6>
+      </div>
+    </div> 
+  </div> 
+  <h2 class="center blog_h"><strong>Check Out Our Posts</strong></h2>
+  <!-- <h6 class="grey-text center">This Section is Under development</h6><br> -->
+  <div class="main-carousel " data-flickity='{ "wrapAround":true, "autoPlay":2000, "imagesLoaded": true}' tabindex="0" >
+    <div class="carousel-cell  " ><a href="{% url 'email_list' %}"><img  src="../../static/main/images/MAIL.jpg" ></a></div>
+    <div class="carousel-cell "><a href="{% url 'automation' %}"><img  src="../../static/main/images/Automation.jpg" ></a></div>
+    <div class="carousel-cell "><a href="{% url 'whymarketplace' %}"><img  src="../../static/main/images/MARK.jpg" ></a></div>
+    <div class="carousel-cell "><a href="{% url 'blog' %}"><img  src="../../static/main/images/FACTORS.jpg" ></a></div>
+    <div class="carousel-cell "><a href="{% url 'onlinebusiness' %}"><img  src="../../static/main/images/blog1_thumb.jpg" ></a></div>
+    <div class="carousel-cell "><a href="{% url 'leverage' %}"><img src="../../static/main/images/Lev content.jpg" ></a></div>    
+  </div>
+
+  <style>
+    .carousel-cell{
+      margin: 0.2rem;
+     
+    }
+    .main-carousel{
+      margin-bottom: 6rem;
+    }
+    .carousel-cell img{
+      border-radius: 1.2rem;
+    }
+    @media only screen and (max-width: 550px){
+    .blog_h{
+      font-size: 2rem;
+    }
+  }
+  </style>
 
 {% endblock %}
