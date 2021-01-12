@@ -31,7 +31,7 @@
   height: auto;
   background-color: #312a50;
   object-fit: cover;
-  background-image: url(../../static/main/images/homepage_background.png);
+  background-image: url(homepage_background.png);
  }
  .link-button{
   font-weight: bold; 
@@ -43,7 +43,6 @@
 .card-content{
   padding: 1rem 1.5rem;
   text-align: left;
-  line-height: 1.25;
 }
 .card-head{
   height: 3rem;
@@ -64,10 +63,10 @@ span{
   min-height: 196px;
 }
     .card{
-      transition: transform 1.3s ease;
+      transition: transform 1.5s ease;
     }
     .card:hover{
-      transform: scale(1.04);
+      transform: scale(1.03);
     }
 section{
   width: 100%;

@@ -11,7 +11,7 @@
   height: auto;
   background-color: #312a50;
   object-fit: cover;
-  background-image: url(../../static/main/images/homepage_background.png);
+  background-image: url(homepage_background.png);
  }
  .link-button{
   font-weight: bold; 

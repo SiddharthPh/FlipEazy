@@ -11,10 +11,10 @@
   height:auto;
   background-color: #312a50;
   object-fit: cover;
-  background-image: url(../../static/main/images/homepage_background.png);
+  background-image: url(images/homepage_background.png);
  }
-#adsense,#adwords,#amazon{
-  width: 60%;
+#adsense,#adwords{
+  width:60%;
   height: auto;
   border-radius: 2rem;
   padding:1rem;
@@ -22,7 +22,23 @@
   margin: 2rem 2rem;
 }
 #amazon{
-  width: 85%;
+  width: 90%;
+  height: auto;
+  border-radius: 2rem;
+  padding:1rem;
+  box-shadow: 0px 2px 2px 0px #312a50;
+  margin: 2rem 2rem;
+}
+.icon-container{
+  width: 23%;
+  transition: transform 1s ease;
+}
+.amaz-container{
+  width: 22%;
+  transition: transform 1s ease;
+}
+.icon-container:hover,.amaz-container:hover{
+  transform: scale(1.1);
 }
 .texts{
   font-size: 2rem;
@@ -71,16 +87,50 @@ span{
   padding:0 2.2rem;
   border-radius: 0.5rem !important;  
 }
+footer li{
+  margin-left: 1rem;
+}
+  .carousel-cell{
+    margin: 0.2rem;
+   
+  }
+  .main-carousel{
+    margin-bottom: 6rem;
+  }
+  .carousel-cell img{
+    border-radius: 1.2rem;
 
+  }
+  @media only screen and (max-width: 550px){
+    .blog_h{
+      font-size: 2rem;
+    }
+  }
+  
  @media only screen and (max-width: 650px) {
   .texts  {
     font-size:16px !important; 
   }
-/*    #adwords,#adsense{
-    margin: 1rem !important;
-    width: 80% !important; 
-  }
-*/  .mob_d{
+.icon-container{
+  width: 32%;
+  transition: transform 1s ease;
+}
+.amaz-container{
+  width: 32%;
+  margin-right: 1rem;
+  transition: transform 1s ease;
+}
+#adsense,#adwords{
+  width: 70%;
+}
+#amazon{
+  width: 93%;
+}
+#amaz{
+  margin-left: 2rem;
+  margin-top: 0.3rem;
+}
+  .mob_d{
     font-size: 2.4rem !important; 
   }
    .carousel-cell img{
@@ -93,11 +143,30 @@ span{
     margin-top: 0.7rem;
   }*/
 }
-@media only screen and (max-width: 375px){
+@media only screen and (max-width: 875px){
 /*    #amazon{
     margin: 1rem !important;
     width: 120% !important; 
   }*/
+  .icon-container{
+  width: 31%;
+  transition: transform 1s ease;
+}
+.amaz-container{
+  width: 33.4%;
+  margin-right: 1rem;
+  transition: transform 1s ease;
+}
+#adsense,#adwords{
+  width: 70%;
+}
+#amazon{
+  width: 93%;
+}
+#amaz{
+  margin-left: 2rem;
+  margin-top: 0.3rem;
+}
 
 }
 
@@ -135,7 +204,19 @@ span{
     margin: 0.5rem !important;
     width: 95% !important; 
   }
-*/
+*/.icon-container{
+  width: 34%;
+  transition: transform 1s ease;
+}
+.amaz-container{
+  width: 32%;
+  margin-right: 1rem;
+  transition: transform 1s ease;
+}
+.texts{
+  margin-left: 1em;
+  margin-top: 0;
+}
   .mob_d{
     font-size: 2rem !important; 
   }
