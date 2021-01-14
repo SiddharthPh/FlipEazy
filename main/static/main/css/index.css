@@ -89,7 +89,7 @@ span{
 }
 footer li{
   margin-left: 1rem;
-}
+} 
   .carousel-cell{
     margin: 0.2rem;
    
@@ -193,10 +193,16 @@ footer li{
     margin-left: 3rem !important;
     margin-top: 0rem !important;
   }*/
+  .amaz-container{
+  width: 31%;
+  margin-right: 1rem;
+  transition: transform 1s ease;
+}
+
 }
 
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 430px) {
   .texts  {
     font-size:14px !important; 
   }
@@ -205,7 +211,7 @@ footer li{
     width: 95% !important; 
   }
 */.icon-container{
-  width: 34%;
+  width: 33%;
   transition: transform 1s ease;
 }
 .amaz-container{
