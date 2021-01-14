@@ -5,6 +5,9 @@
  *
  * Made By MaterializeCSS.com
  */
+ footer li{
+  margin-left: 1rem;
+}
   html,body
 {
     width: 100%;
