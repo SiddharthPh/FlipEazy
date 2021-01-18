@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path,include
 from . import views
 urlpatterns=[
     path('',views.home_page,name="home"),
@@ -23,4 +23,5 @@ urlpatterns=[
     path('sellnow/',views.sell_now, name="sellnow"),
     path('contactus_form',views.contactus_form_view,name="contactus_form"),
     path('newsletter',views.newsletter_view, name="newsletter"),
+    path('accounts/',include('allauth.urls')),
 ]
